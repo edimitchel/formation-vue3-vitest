@@ -2,11 +2,20 @@
 theme: ./theme
 highlighter: prism
 lineNumbers: false
+aspectRatio: 16/9
 drawings:
   persist: true
 css: unocss
 layout: intro
+fonts:
+  # basically the text
+  sans: 'Roboto'
+  # use with `font-serif` css class from windicss
+  serif: 'Roboto Slab'
+  # for code blocks, inline code, etc.
+  mono: 'Fira Code'
 title: VUE 3
+hideInToc: true
 ---
 
 # VUE 3
@@ -20,30 +29,25 @@ title: VUE 3
 
 <style>
   h1 {
-    @apply text-vue;
+    @apply vue-brand;
   }
 </style>
 
 
 ---
+hideInToc: true
+---
 
 # Programme de la formation
 
-- <span text-vue>Vue</span> (jour 1) 
+<Toc maxDepth="3" />
 
-  - Introduction et les bases fonctionnelles
-  - Options API vs. Composition API
-  - Mise en pratique
-
-- Vitest + Cypress (jour 2)
-  - Développement guidé par les tests unitaires
-  - Tests d'intégration et bout en bout
 
 ---
 layout: image-right
 image: https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg
 ---
-# L'histoire de <span text-vue>Vue</span>
+# L'histoire de <span vue-brand>Vue</span>
 
 Créé en **2014 par Evan You** pour construire rapidement une application web sans prise de tête.
 
@@ -61,16 +65,17 @@ Aujourd'hui, il culmine parmi les plus grands framework JS utilisés (avec React
 
 ---
 layout: fact
+hideInToc: true
 ---
 # Framework ou Librairie ?
 
-### Une petite explication s'impose
+## Une petite explication s'impose
 ---
 layout: image-right
 image: https://tomasp.net/blog/2015/library-frameworks/diagram-narrow.png
 ---
 
-# Framework / Librairie
+## Framework / Librairie
 
 <div text-gray font-bold font-mono>Framework :</div> Ensemble de règles imposées techniquement pour guider un travail à effectuer.
 
@@ -80,7 +85,7 @@ image: https://tomasp.net/blog/2015/library-frameworks/diagram-narrow.png
 <br>
 
 Malgré son apparence de librairie,  
-**<span text-vue>Vue</span> se positionne comme un framework grâce à son écosystème**.
+**<span vue-brand>Vue</span> se positionne comme un framework grâce à son écosystème**.
 
 <!--
 Vue seul représente le noyau apportant le minimum nécessaire pour
@@ -88,4 +93,44 @@ bénéficier de la réactivité sur les vues utilisateur.
 
 Grâce aux projets officiels et communautaires autour de lui, il devient un framework imposant certaines règles mais gardant toujours l'ouverture nécessaire pour substituer les parties agrémentées
 -->
+
+---
+layout: section
+---
+# Les forces vives de <span vue-brand>Vue</span>
+
+### pour être productif et efficace
+
+---
+hideInToc: true
+---
+## Les forces vives de <span vue-brand>Vue</span>
+
+<div text-2xl list-outside>
+
+  * Composants *data-driven*
+  * Templating et ses astuces
+  * Évènements et interactions
+  * 
+
+</div>
+
+---
+## Options API vs. Composition API
+
+---
+
+## Mise en pratique
+
+---
+
+# Vitest & Cypress
+
+---
+
+## Développement guidé par les tests unitaires
+
+---
+
+## Tests d'intégration et bout en bout
 ---
