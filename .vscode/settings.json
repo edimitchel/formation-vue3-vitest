@@ -9,5 +9,6 @@
         "**/Thumbs.db": true,
         "**/node_modules": true
     },
-    "unocss.root": "./setup"
+    "unocss.root": "./setup",
+    "cSpell.language": "fr"
 }

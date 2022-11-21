@@ -1,7 +1,9 @@
 import { defineUnoSetup } from "@slidev/types";
 
 export default defineUnoSetup(() => ({
-  shortcuts: {},
+  shortcuts: {
+    "text-vue": "text-vue font-mono",
+  },
   theme: {
     colors: {
       cap: "#0070ad",
