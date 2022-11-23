@@ -1,14 +1,15 @@
 {
-    "commentTranslate.targetLanguage": "fr",
-    "files.exclude": {
-        "**/.git": true,
-        "**/.svn": true,
-        "**/.hg": true,
-        "**/CVS": true,
-        "**/.DS_Store": true,
-        "**/Thumbs.db": true,
-        "**/node_modules": true
-    },
-    "unocss.root": "./setup",
-    "cSpell.language": "fr"
+  "commentTranslate.targetLanguage": "fr",
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/node_modules": true
+  },
+  "unocss.root": "./setup",
+  "cSpell.language": "fr,en",
+  "scss.lint.unknownAtRules": "ignore"
 }

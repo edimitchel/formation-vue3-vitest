@@ -1,2 +1,2 @@
-import './layout.css'
+import './layout.scss'
 import './code.css'

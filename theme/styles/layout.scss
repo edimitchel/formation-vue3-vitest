@@ -29,10 +29,14 @@
 
   h3 {
     @apply text-sm pt-2 uppercase tracking-widest font-500 -ml-[0.05em];
+    
+    &:first-child {
+      @apply text-3xl text-$slidev-text-primary;
+    }
   }
 
   h3:not(.opacity-100) {
-    @apply opacity-40;
+    @apply opacity-80;
   }
 
   p {
@@ -79,7 +83,7 @@
   }
 
   a {
-    @apply border-current border-b border-dashed hover: (text-$slidev-theme-primary border-solid);
+    @apply underline decoration-vue hover:(text-$slidev-theme-primary border-solid decoration-3px);
   }
 
   td,

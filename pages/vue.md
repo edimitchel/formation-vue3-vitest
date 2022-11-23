@@ -1,7 +1,18 @@
 ---
 layout: fact
+preload: false
 ---
 # Développer avec <span vue-brand>Vue</span>
+
+<div
+  v-motion
+  :initial="{ y: 80 }"
+  :enter="{ y: 0 }">
+
+## JOUR 1
+
+</div>
+
 ---
 layout: image-right
 image: https://upload.wikimedia.org/wikipedia/commons/9/95/Vue.js_Logo_2.svg
@@ -32,21 +43,22 @@ hideInToc: true
 
 <v-click>
 
-> Une petite explication s'impose
+### Une petite explication s'impose
 
 </v-click>
+
 ---
 layout: image-right
 hideInToc: true
-image: https://tomasp.net/blog/2015/library-frameworks/diagram-narrow.png
+image: /framework-library.svg
 ---
+
 ## Framework / Librairie
 
-<div text-gray font-bold font-mono>Framework :</div> Ensemble de règles imposées techniquement pour guider un travail à effectuer.
+<span my-2 text-gray font-bold font-mono>Framework</span> : Ensemble de règles imposées techniquement pour guider un travail à effectuer.
 
-<div m-t text-gray font-bold font-mono>Librairie :</div> Ensemble de solutions techniques prêtes à l'emploi
+<span my-2 text-gray font-bold font-mono>Librairie</span> : Ensemble de solutions techniques prêtes à l'emploi
 
-<br>
 <br>
 
 Malgré son apparence de librairie,  
@@ -60,23 +72,112 @@ Grâce aux projets officiels et communautaires autour de lui, il devient un fram
 -->
 
 ---
-layout: section
+layout: image-right
+class: my-auto
+title: Ses forces vives
+level: 2
+image: /vue-hero.png
 ---
-## Ses forces vives
+## <span uppercase>Ses forces vives</span>
 
 #### pour te rendre productif et efficace
 
-<v-clicks>
 
-- Composants *data-driven*
-- Templating et ses astuces
-- Évènements et interactions
+<div
+  v-motion
+  v-motion-slide-visible-bottom
+  class="mt-4 -ml-6"
+>
 
-</v-clicks>
+<Toc mode="filterOnlyCurrentTree" minDepth="3" />
+
+</div>
+
 
 <!-- 
-
+- Les données conduisent les vues : tout changement dans la vue doit être un effet d'un changement de données et non par un changement manuellement effectuer (comme on pourrait le faire avec jQuery). Cela permet d'avoir une représentation fidèle du modèle de donnée dans la vue.
+- Le templating a plusieurs avantages dont la fluidité dans son écriture et l'optimisation au runtime. Le templating permet d'organiser la vue en lien avec les données et Vue propose des outils pour rendre l'organisation la moins verbeuse.
+- Les données descendent sous forme de props ou de contexte (stage management, inject) mais ne peuvent remontées de la même manière: elles remontent via les événements issus de changements d'état ou d'interaction utilisateur
 -->
+---
+---
+### Composants guidés par les données
+
+L'un des principes fondamentaux de Vue certifie que les données soient toujours bien représentées dans la vue.
+Se reposant sur le principe `MVVC` (Model-View-ViewModel), Vue propose de simplifier cela via un système de réactivité.
+
+<div grid grid-cols-2>
+  <div>
+  <v-click hide>
+
+  ![](https://upload.wikimedia.org/wikipedia/commons/8/87/MVVMPattern.png)
+
+  </v-click>
+
+
+  <div m4 relative bottom-40 v-after>
+
+```mermaid
+flowchart LR
+  V-- Binding -->B
+  B([MonComposant])
+  B-- Event -->V{Vue}
+  A([donnée1])<-- Reactive -->V
+```
+
+  <small>
+
+  `Reactive` : Système de réactivité  
+  `Binding` : Liaison utilisant le *Virtual DOM*  
+  `Event` : Remontée d'événements
+
+  </small>
+  </div>
+
+  </div>
+
+<div>
+<v-click>
+
+Ainsi, il est interdit de :
+
+- Modifier directement le DOM
+- Respecter la responsabilité des composants
+
+</v-click>
+<v-click >
+  <div ml-6 text-8px>
+
+  > Ne pas modifier directement les props  
+  > Ne pas modifier les props du parent
+
+  </div>
+</v-click>
+
+</div>
+</div>
+
+---
+layout: image-left
+image: https://atomicdesign.bradfrost.com/images/content/atomic-design-process.png
+---
+
+La composition d'une application consiste en l'utilisation de plusieurs composantes avec leur nature propre.
+
+L'[Atomic Design](https://atomicdesign.bradfrost.com/chapter-2/) suggère le découpage en plusieurs nature (à l'image de la composition)
+
+---
+---
+### Templating et ses astuces
+
+d
+
+---
+---
+### Évènements et interactions
+
+sds
+
 ---
 title: Options API vs. Composition API
 level: 2

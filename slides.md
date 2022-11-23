@@ -8,12 +8,9 @@ drawings:
 css: unocss
 layout: intro
 fonts:
-  # basically the text
-  sans: "Roboto"
-  # use with `font-serif` css class from windicss
-  serif: "Roboto Slab"
-  # for code blocks, inline code, etc.
-  mono: "Fira Code"
+  sans: Roboto
+  serif: Roboto Slab
+  mono: Fira Code
 title: VUE 3
 hideInToc: true
 ---
@@ -32,13 +29,18 @@ hideInToc: true
     @apply vue-brand;
   }
 </style>
+
+<!--
+DSD
+-->
+
 ---
 hideInToc: true
 ---
 
 # Programme de la formation
 
-<Toc />
+<Toc maxDepth="2" />
 ---
 src: ./pages/vue.md
 ---
