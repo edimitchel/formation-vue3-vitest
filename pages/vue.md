@@ -160,11 +160,23 @@ Ainsi, il est interdit de :
 ---
 layout: image-left
 image: https://atomicdesign.bradfrost.com/images/content/atomic-design-process.png
+split: 1/3
 ---
 
-La composition d'une application consiste en l'utilisation de plusieurs composantes avec leur nature propre.
+La composition dans une application consiste en l'utilisation de plusieurs composantes pour former un organisme muni de corps inter-dépendants.
 
-L'[Atomic Design](https://atomicdesign.bradfrost.com/chapter-2/) suggère le découpage en plusieurs nature (à l'image de la composition)
+L'[Atomic Design](https://atomicdesign.bradfrost.com/chapter-2/) suggère un découpage à l'image de la composition chimique en assurant la responsabilité de chacun.
+
+<v-clicks>
+
+- **Atome** : une entité simple ayant une sémantique unique et réutilisable  
+  <small>bouton, champ texte, icône</small>
+- **Molécule** : atomes assemblés pour une sémantique flexible et réutilisable  
+  <small>champ avec label, table avec champ de recherche</small>
+- **Organisme** : ensemble complexe d'atomes ou/et de molécules (voire d'autres organismes) de sémantiques différentes  
+  <small>en-tête d'application, section d'application</small>
+
+</v-clicks>
 
 ---
 ---
