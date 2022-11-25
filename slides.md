@@ -26,7 +26,7 @@ hideInToc: true
 
 <style>
   h1 {
-    @apply vue-brand;
+    --at-apply: vue-brand;
   }
 </style>
 

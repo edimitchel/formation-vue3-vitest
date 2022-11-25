@@ -43,7 +43,7 @@ hideInToc: true
 
 <v-click>
 
-### Une petite explication s'impose
+<h3 animate-pulse>Une petite explication s'impose</h3>
 
 </v-click>
 
@@ -198,7 +198,7 @@ layout: fact
 
 ---
 ---
-## Les Macros
+### Les Macros
 https://vue-macros.sxzz.moe
 
 ---
