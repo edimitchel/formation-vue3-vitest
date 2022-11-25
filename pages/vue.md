@@ -182,13 +182,11 @@ L'[Atomic Design](https://atomicdesign.bradfrost.com/chapter-2/) suggère un dé
 ---
 ### Templating et ses astuces
 
-d
 
 ---
 ---
 ### Évènements et interactions
 
-sds
 
 ---
 title: Options API vs. Composition API
@@ -198,6 +196,12 @@ layout: fact
 # Options API <small>vs.</small> Composition API
 ## De la simplicité à la complétude
 
+---
+---
+## Les Macros
+https://vue-macros.sxzz.moe
+
+---
 ---
 
 ## Mise en pratique
