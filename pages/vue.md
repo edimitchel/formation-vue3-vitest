@@ -182,6 +182,103 @@ L'[Atomic Design](https://atomicdesign.bradfrost.com/chapter-2/) suggère un dé
 ---
 ### Templating et ses astuces
 
+Vue adopte un système de templating pour trois grandes raisons :
+
+- pouvoir utiliser le DOM comme template
+- garder une séparation nette entre vue et données
+- offrir des raccourcis faciles à retenir
+
+---
+---
+
+#### pouvoir utiliser le DOM comme template
+**Vue en mode script**
+
+```html {2-11|4-10|all}
+<div id="root">
+  <section>
+    <h1>{{name}}</h1>
+    <nav :class="{ hidden: list.length === 0 }">
+      <ul>
+        <li v-for="item in list">
+          {{item}}
+        </li>
+      </ul>
+    </nav>
+  </section>
+</div>
+```
+
+Ce template peut tout à fait être intégré tel quel dans du HTML, le navigateur peut l'interpréter sans erreur.
+
+<v-click>
+
+Vue peut se monter sur un template *inline* et y ajouter la réactivité et les interactions nécessaires.
+
+```ts
+  const app = createApp()
+
+  app.mount('#root')
+```
+
+</v-click>
+
+---
+layout: two-cols
+---
+
+#### garder une séparation nette entre la vue et les données
+
+Le web c'est l'HTML, le CSS et le Javascript.
+
+L'HTML peut fonctionner seul, sans Javascript.  
+Le CSS aussi.
+
+Respecter les responsabilités de chacun assure une bonne organisation.
+
+<v-click>
+
+![](/vue-logo-html-css-js.png)
+
+</v-click>
+
+
+::right::
+
+<v-click>
+
+Les [SFC](https://vuejs.org/guide/scaling-up/sfc.html) apportent l'union des trois au sein d'un même fichier.
+
+```vue
+<script>
+export default {
+  data() {
+    return {
+      greeting: 'Hello World!'
+    }
+  }
+}
+</script>
+
+<template>
+  <p class="greeting">{{ greeting }}</p>
+</template>
+
+<style>
+.greeting {
+  color: red;
+  font-weight: bold;
+}
+</style>
+```
+
+</v-click>
+<!-- "Le CSS aussi": Référence aux solution CSS-in-JS très coûteuse au runtime -->
+
+---
+---
+
+#### offrir des raccourcis faciles à retenir
 
 ---
 ---

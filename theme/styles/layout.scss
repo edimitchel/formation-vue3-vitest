@@ -39,6 +39,13 @@
     --at-apply: opacity-80;
   }
 
+  h4 {
+    @extend h3;
+    &:first-child {
+      --at-apply: text-xl;
+    }
+  }
+
   p {
     --at-apply: my-4 leading-6;
   }
@@ -63,7 +70,7 @@
   }
 
   blockquote {
-    --at-apply: text-sm px-2 py-1 bg-$prism-background border-$slidev-theme-primary border-x-4 rounded;
+    --at-apply: text-sm px-2 py-1 bg-$prism-background border-$slidev-theme-primary border-x-3;
   }
 
   blockquote>* {

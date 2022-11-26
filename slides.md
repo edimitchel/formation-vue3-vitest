@@ -1,6 +1,6 @@
 ---
 theme: ./theme
-highlighter: prism
+highlighter: shiki
 lineNumbers: false
 aspectRatio: 16/9
 drawings:
