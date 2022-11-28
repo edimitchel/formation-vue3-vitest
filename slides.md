@@ -11,11 +11,11 @@ fonts:
   sans: Roboto
   serif: Roboto Slab
   mono: Fira Code
-title: VUE 3
+title: Construire une application reactive avec Vue
 hideInToc: true
 ---
 
-# VUE 3
+# Construire une application reactive avec Vue
 
 <span uppercase font-mono>de la théorie à l'application bien finie</span>
 

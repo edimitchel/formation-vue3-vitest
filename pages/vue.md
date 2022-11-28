@@ -39,7 +39,7 @@ level: 2
 layout: fact
 hideInToc: true
 ---
-# Framework ou Librairie ?
+# Framework <small>ou</small> Librairie ?
 
 <v-click>
 
@@ -89,7 +89,7 @@ image: /vue-hero.png
   class="mt-4 -ml-6"
 >
 
-<Toc mode="filterOnlyCurrentTree" minDepth="3" />
+<Toc mode="filterOnlyCurrentTree" minDepth="3" maxDepth="3" />
 
 </div>
 
@@ -182,11 +182,9 @@ L'[Atomic Design](https://atomicdesign.bradfrost.com/chapter-2/) suggère un dé
 ---
 ### Templating et ses astuces
 
-Vue adopte un système de templating pour trois grandes raisons :
+Vue adopte un système de templating pour 3 grandes raisons :
 
-- pouvoir utiliser le DOM comme template
-- garder une séparation nette entre vue et données
-- offrir des raccourcis faciles à retenir
+<Toc mode="filterOnlyCurrentTree" minDepth="4" maxDepth="4" />
 
 ---
 ---
@@ -194,7 +192,7 @@ Vue adopte un système de templating pour trois grandes raisons :
 #### pouvoir utiliser le DOM comme template
 **Vue en mode script**
 
-```html {2-11|4-10|all}
+```vue-html {2-11|4-10|all}
 <div id="root">
   <section>
     <h1>{{name}}</h1>
@@ -234,7 +232,7 @@ Le web c'est l'HTML, le CSS et le Javascript.
 L'HTML peut fonctionner seul, sans Javascript.  
 Le CSS aussi.
 
-Respecter les responsabilités de chacun assure une bonne organisation.
+Respecter les responsabilités de chacun assure une bonne organisation, et permet une meilleure pérennité du code.
 
 <v-click>
 
@@ -245,9 +243,10 @@ Respecter les responsabilités de chacun assure une bonne organisation.
 
 ::right::
 
-<v-click>
+<v-click fade>
+<div pl-4>
 
-Les [SFC](https://vuejs.org/guide/scaling-up/sfc.html) apportent l'union des trois au sein d'un même fichier.
+Les **composants monofichiers**, <br>ou les [Single-File Component (SFC)](https://vuejs.org/guide/scaling-up/sfc.html) apportent l'union des trois au sein d'un même fichier.
 
 ```vue
 <script>
@@ -272,25 +271,54 @@ export default {
 </style>
 ```
 
+</div>
 </v-click>
-<!-- "Le CSS aussi": Référence aux solution CSS-in-JS très coûteuse au runtime -->
+<!-- "Le CSS aussi" : Référence aux solution CSS-in-JS très coûteuse au runtime -->
 
 ---
 ---
 
-#### offrir des raccourcis faciles à retenir
+#### proposer un sucre syntaxique facile à retenir
 
+À la différence du javascript, le templating est extensible et propose l'abstraction des fonctionnalités du framework javascript sous-jacentes.
+
+<Toc mode="filterOnlyCurrentTree" minDepth="5" />
+
+---
+---
+##### Intérpolation du texte
+
+---
+---
+##### Liaison de données réactives
+
+Comme mentionné, Vue propose un système de réactivité 
+---
+layout: fact
+title: Réactivité ou Immutabilité
+level: 5
+hideInToc: true
+---
+# Réactivité <small>ou</small> Immutabilité
+---
+---
+##### Rendu conditionnel
+---
+---
+##### Rendu de boucles 
+---
+---
+##### Les directives
 ---
 ---
 ### Évènements et interactions
 
-
 ---
-title: Options API vs. Composition API
+title: Options API ou Composition API ?
 level: 2
 layout: fact
 ---
-# Options API <small>vs.</small> Composition API
+# Options API <small>ou</small> Composition API ?
 ## De la simplicité à la complétude
 
 ---
@@ -299,6 +327,17 @@ layout: fact
 https://vue-macros.sxzz.moe
 
 ---
+layout: image-right
+image: /vue-tutoriel.png
 ---
-
 ## Mise en pratique
+
+Après la théorie, passons à la pratique.
+
+La documentation Vue propose depuis sa nouvelle version un tutoriel ainsi que des exemples.
+
+**Rendez-vous sur la page [Tutoriel](https://vuejs-docs-fr.netlify.app/tutorial/) de Vue**
+
+<a href="https://vuejs-docs-fr.netlify.app/tutorial/" target="_blank">
+  <button bg-vue p="y-2 x-4" text-white dark:text-black hover="opacity-75" uppercase text-xs rounded><carbon-play-outline-filled/> Résoudre les 15 étapes</button>
+</a>
