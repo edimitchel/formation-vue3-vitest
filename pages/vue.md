@@ -182,7 +182,7 @@ L'[Atomic Design](https://atomicdesign.bradfrost.com/chapter-2/) suggère un dé
 ---
 ### Templating et ses astuces
 
-Vue adopte un système de templating pour 3 grandes raisons :
+Vue adopte un système de templating pour 4 grandes raisons :
 
 <Toc mode="filterOnlyCurrentTree" minDepth="4" maxDepth="4" />
 
@@ -190,7 +190,7 @@ Vue adopte un système de templating pour 3 grandes raisons :
 ---
 
 #### pouvoir utiliser le DOM comme template
-**Vue en mode script**
+> Vue en mode html
 
 ```vue-html {2-11|4-10|all}
 <div id="root">
@@ -212,6 +212,44 @@ Ce template peut tout à fait être intégré tel quel dans du HTML, le navigate
 <v-click>
 
 Vue peut se monter sur un template *inline* et y ajouter la réactivité et les interactions nécessaires.
+
+```ts
+  const app = createApp()
+
+  app.mount('#root')
+```
+
+</v-click>
+
+---
+hideInToc: true
+---
+
+#### pouvoir utiliser le DOM comme template
+> Vue en mode application
+
+```html
+<!-- L'ancre de montage -->
+<div id="root">
+</div>
+```
+
+```vue mon-composant.vue
+<template>
+  <section>
+    <h1>{{name}}</h1>
+    <nav :class="{ hidden: list.length === 0 }">
+      <ul>
+        <li v-for="item in list">{{item}}</li>
+      </ul>
+    </nav>
+  </section>
+</template>
+```
+
+<v-click>
+
+Vue va monter toute l'application sur le point de montage et rendre tous les composants.
 
 ```ts
   const app = createApp()
@@ -280,13 +318,17 @@ export default {
 
 #### proposer un sucre syntaxique facile à retenir
 
-À la différence du javascript, le templating est extensible et propose l'abstraction des fonctionnalités du framework javascript sous-jacentes.
+À la différence du JavaScript, <br>le templating est extensible et propose l'abstraction des fonctionnalités du framework.
+
+Voici une liste des fonctions les plus pratiques utilisable via le template :
 
 <Toc mode="filterOnlyCurrentTree" minDepth="5" />
 
+<Reference to="https://vuejs.org/guide/essentials/template-syntax.html" title="Reference syntaxe de template" />
+
 ---
 ---
-##### Intérpolation du texte
+##### Interpolation du texte
 
 ---
 ---
@@ -299,7 +341,8 @@ title: Réactivité ou Immutabilité
 level: 5
 hideInToc: true
 ---
-# Réactivité <small>ou</small> Immutabilité
+# Réactivité <small>ou</small> Immutabilité ?
+
 ---
 ---
 ##### Rendu conditionnel
@@ -311,8 +354,12 @@ hideInToc: true
 ##### Les directives
 ---
 ---
+#### optimiser la manipulation du DOM
+---
+---
 ### Évènements et interactions
 
+---
 ---
 title: Options API ou Composition API ?
 level: 2
