@@ -192,7 +192,7 @@ Vue adopte un système de templating pour 4 grandes raisons :
 #### pouvoir utiliser le DOM comme template
 > Vue en mode **html**
 
-```vue-html {2-11|4-10|all}
+```html {all|2-11|4-10|all}
 <div id="root">
   <section>
     <h1>{{name}}</h1>
@@ -230,11 +230,11 @@ hideInToc: true
 
 ```html
 <!-- L'ancre de montage -->
-<div id="root">
-</div>
+<div id="root"></div>
 ```
 
-```vue mon-composant.vue
+```vue
+<!-- menu.vue -->
 <template>
   <section>
     <h1>{{name}}</h1>
@@ -249,10 +249,10 @@ hideInToc: true
 
 <v-click>
 
-Vue va monter toute l'application sur le point de montage et rendre tous les composants.
+Toute l'application App est montée sur le point de montage.
 
 ```ts
-  const app = createApp()
+  const app = createApp(App)
 
   app.mount('#root')
 ```
@@ -281,12 +281,12 @@ Respecter les responsabilités de chacun assure une bonne organisation, et perme
 
 ::right::
 
-<v-click fade>
+<v-click>
 <div pl-4>
 
-Les **composants monofichiers**, <br>ou les [Single-File Component (SFC)](https://vuejs.org/guide/scaling-up/sfc.html) apportent l'union des trois au sein d'un même fichier.
+Les **composants monofichiers**, <br>ou les [Single-File Component (SFC)](https://vuejs.org/guide/scaling-up/sfc.html), apportent l'union des trois au sein d'un même fichier.
 
-```vue
+```vue {all|11-13|15-20|1-9} {at: 2}
 <script>
 export default {
   data() {
