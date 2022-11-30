@@ -190,7 +190,7 @@ Vue adopte un système de templating pour 4 grandes raisons :
 ---
 
 #### pouvoir utiliser le DOM comme template
-> Vue en mode html
+> Vue en mode **html**
 
 ```vue-html {2-11|4-10|all}
 <div id="root">
@@ -226,7 +226,7 @@ hideInToc: true
 ---
 
 #### pouvoir utiliser le DOM comme template
-> Vue en mode application
+> Vue en mode **application**
 
 ```html
 <!-- L'ancre de montage -->
@@ -324,11 +324,24 @@ Voici une liste des fonctions les plus pratiques utilisable via le template :
 
 <Toc mode="filterOnlyCurrentTree" minDepth="5" />
 
-<Reference to="https://vuejs.org/guide/essentials/template-syntax.html" title="Reference syntaxe de template" />
+<Reference to="guide/essentials/template-syntax.html" title="Reference syntaxe de template" />
 
 ---
+layout: two-cols-header
 ---
-##### Interpolation du texte
+##### Interpolation de texte
+
+<Reference to="guide/essentials/template-syntax.html#text-interpolation" title="Référence syntaxe de template" />
+
+::left::
+
+Pour rendre une variable de type texte dans le template.
+
+Son contenu autour des moustaches `{{ ... }}` doit être une expression javascript.
+
+::right:: 
+
+
 
 ---
 ---

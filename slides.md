@@ -7,6 +7,7 @@ drawings:
   persist: true
 css: unocss
 layout: intro
+monaco: true
 fonts:
   sans: Roboto
   serif: Roboto Slab

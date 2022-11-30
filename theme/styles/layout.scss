@@ -46,12 +46,23 @@
     }
   }
 
+  h5 {
+    @extend h4;
+    &:first-child {
+      --at-apply: text-sm text-center mb-4;
+    }
+  }
+
   p {
     --at-apply: my-4 leading-6;
   }
 
   h1+p {
     --at-apply: -mt-2 mb-4;
+  }
+
+  .grid {
+    gap: 10px;
   }
 
   p+h2,
