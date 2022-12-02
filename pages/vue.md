@@ -186,6 +186,8 @@ Vue adopte un système de templating pour 4 grandes raisons :
 
 <Toc mode="filterOnlyCurrentTree" minDepth="4" maxDepth="4" />
 
+<Reference to="guide/essentials/template-syntax.html" title="Reference syntaxe de template" absolute />
+
 ---
 ---
 
@@ -318,36 +320,40 @@ export default {
 
 #### proposer un sucre syntaxique facile à retenir
 
-À la différence du JavaScript, <br>le templating est extensible et propose l'abstraction des fonctionnalités du framework.
+À la différence du JavaScript, le templating est extensible <br>et propose l'abstraction des fonctionnalités du framework tout en se reposant sur l'HTML.
 
 Voici une liste des fonctions les plus pratiques utilisable via le template :
 
 <Toc mode="filterOnlyCurrentTree" minDepth="5" />
 
-<Reference to="guide/essentials/template-syntax.html" title="Reference syntaxe de template" />
+---
+layout: iframe-right
+url: https://sfc.vuejs.org/#eNqNUctOwzAQ/JXFl4DUxKLApUorHjek/oEvIdm2LvEDex2Eovw7dlOhkEoI+eSdGc/MumdP1hZdQLZiJaGybUW4ERqgPNxu+h6yF6wloCcIGhR6X+0RpG6lRvBUkfwImMEwlDzyk26iVX5/iSwT4rCqSXa4PT94Yi1HX6ltIOhyZRps14LNuIIBj8SST9L+75S+dtISeKRgo0oqaxxBSrODAXbOKMjiKrIxbG10bJ06rCF7NuFogoMWQRndIFzBa1xAkP5nC0XUjZp5u3VyuM62Ri7geFY1X7pSo+wmtRmzbdiCjbFyVdni6I2OH9OfAp0BL9gKTpM0i3HTXbADkfUrzoO27/uiNoo/Roy7oEkqzBujHu+KZXH/wBvpaTov0Kv8zZlPjy46CraYPM7jsEOXO4ylHbo/zWbcX4Yz7MI0eQ5CD2z4BjsD5HQ=
+---
+##### Interpolation de texte <Reference to="guide/essentials/template-syntax.html#text-interpolation" title="Référence syntaxe de template" />
+
+Pour rendre une variable de type texte dans le template via les moustaches `{{ ... }}`.
+
+Le contenu doit être une expression javascript.
+<!-- Voir le rendu JS pour avoir une idée de la gestion sous jascente -->
+---
+layout: iframe-right
+url: https://sfc.vuejs.org/#eNp9UtFu2zAM/BVOe8gGNDbQtdvgukO279CLYrGZG1sSJLpLEPjfR0mWl7bAAMMyj0fxjuZF/HSueplQNKINne8d/ZBGGjw56wk0PqlpILhIA6AVqU+f8zeAR5q8KRHAGA4NbH5Z82wnDwPCaI1G+LC5KQw6O2TKfiKy5h8c6Dwwvl4EsFfd8eDtZDTTP3799n1TcvNaNSh/QN8A+QlX8HevNZoGntQQMINzPPjFT1tfGWwJRzcoQo4A2iwKOEOSmqj0UYp4SJHvaZJMBtNZ0G5QITCYxKJeyQVnU/FCSVkuC81hFrqEcynbdUPfHbksp+ExuYtZGUVHyuXCc56TqbbOojnT1lduOEwaU8XiKw1X0t56HYd2604Q7NBrOHg8P3AqDyl/VIub8kty1dYr3U+hgTt3enjNz+YK3Smte8PLcP+OuPhaiLoPrPncgLEGC5N/UhIvbkQ/xh3cjspVz8Ea3tBsY0kEKdatkYJXOMY8OyIXmrqejDseqs6O9Y5ztZ8M9SNutR13X6rb6u6+5v50jVcYxu3e2z8BPXeUYtmrdHnN4EucAvJoPPr/NnvDfdXwTe5d07KvYv4LcaIxow==
+---
+##### Liaison de données réactives (Options API)
+
+Comme déjà mentionné, Vue utilise le binding via un un système de réactivité pour lier une donnée à la vue.
 
 ---
-layout: two-cols-header
+layout: iframe-right
+url: https://sfc.vuejs.org/#eNp9Uttu2zAM/RVOe/AGNDbQtdugJkO279CLYzGeG+sCieoaBP73UbYc9AL0wTBIHh6eQ+oifntfPyUUUmxjFwZPEJGS/6XsYLwLBBcIeIQJjsEZqBhaKQugbOdsJDCxh11GfKn+uPToUoARwTirET5VX1cYnT0yrjokImeZYUlHOjN6B5dMeWi7Ux9cslpC9fn7j58Mm1bk2IYeQxlFIeGV+u+gNdpSObZjzKVts5hhGxwQGj+2hBwBbBcN7ECRIpmV7ZTIPyVyHUDOsjg5/9dsN7YxcnJWiPoKXvPsIRMqWqTerOGir4TT2rbvxqE7cdtVfjaVqyqLzpDLhZc78QZYc7OI5sq2eeGGw1nj3FF8zbtUdHBBY5Bw658hunHQ0Ac8P+TLAcyk+auLm6WLOeauTWj1kKKEO//88Bpf7lDgvtV6sL2E+3fA4qsA9RBZ81mCdRZXJB9pFi9uxPLWNqb19WN0ll/jYqMUohJypVKC32COeXdEPsqmSdaf+rpzptlzrQnJ0mBwo53Zf6tv67v7hufTy3yN0WwOwf2LGHiiEnyfK3nDyae8BeTVBAwfDnuDfTXwTe3d0LKHSUz/AaU4NN0=
+hideInToc: true
 ---
-##### Interpolation de texte
+##### Liaison de données réactives (Composition API)
 
-<Reference to="guide/essentials/template-syntax.html#text-interpolation" title="Référence syntaxe de template" />
-
-::left::
-
-Pour rendre une variable de type texte dans le template.
-
-Son contenu autour des moustaches `{{ ... }}` doit être une expression javascript.
-
-::right:: 
+Comme déjà mentionné, Vue utilise le binding via un un système de réactivité pour lier une donnée à la vue.
 
 
-
----
----
-##### Liaison de données réactives
-
-Comme mentionné, Vue propose un système de réactivité 
 ---
 layout: fact
 title: Réactivité ou Immutabilité
@@ -355,7 +361,6 @@ level: 5
 hideInToc: true
 ---
 # Réactivité <small>ou</small> Immutabilité ?
-
 ---
 ---
 ##### Rendu conditionnel

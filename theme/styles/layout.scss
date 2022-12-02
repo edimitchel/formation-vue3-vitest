@@ -49,7 +49,7 @@
   h5 {
     @extend h4;
     &:first-child {
-      --at-apply: text-sm text-center mb-4;
+      --at-apply: text-sm mb-4 relative;
     }
   }
 

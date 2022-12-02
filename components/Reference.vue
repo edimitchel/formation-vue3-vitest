@@ -1,25 +1,30 @@
 <template>
-    <a :href="link" :title="title" target="_blank" absolute top-12 right-10 text-xl>
+    <a class="reference" :href="link" :title="title" target="_blank" text-xl :class="absolute ? 'absolute top-12 right-10' : 'relative ml'">
         <carbon-notebook-reference />
     </a>
 </template>
 <script setup lang="ts">
 import { VUE_DOCS } from '../constants';
 
-const props = withDefaults(defineProps<{ to: string; title?: string }>(), {
-    title: "Reference"
+const props = withDefaults(defineProps<{ to: string; title?: string; absolute?: boolean }>(), {
+    title: "Reference",
+    absolute: false
 });
 
 const link = props.to.startsWith('https://') ? props.to : `${VUE_DOCS}${props.to}`
 
 </script>
-<style scoped lang="scss">
-a {
+<style lang="scss">
+a.reference {
     transition: all 200ms;
 
     &:hover {
-        @apply: !text-vue;
-        transform: translate3d(2px, -2px, 0)
+        @apply: !text-vue inline-block;
+        transform: translateX(2px) translateY(-2px);
+    }
+
+    a & {
+        pointer-events: none;
     }
 }
 </style>
