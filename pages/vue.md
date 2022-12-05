@@ -344,15 +344,7 @@ url: https://sfc.vuejs.org/#eNp9UtFu2zAM/BVOe8gGNDbQtdvgukO279CLYrGZG1sSJLpLEPjf
 
 Comme déjà mentionné, Vue utilise le binding via un un système de réactivité pour lier une donnée à la vue.
 
----
-layout: iframe-right
-url: https://sfc.vuejs.org/#eNp9Uttu2zAM/RVOe/AGNDbQtdugJkO279CLYzGeG+sCieoaBP73UbYc9AL0wTBIHh6eQ+oifntfPyUUUmxjFwZPEJGS/6XsYLwLBBcIeIQJjsEZqBhaKQugbOdsJDCxh11GfKn+uPToUoARwTirET5VX1cYnT0yrjokImeZYUlHOjN6B5dMeWi7Ux9cslpC9fn7j58Mm1bk2IYeQxlFIeGV+u+gNdpSObZjzKVts5hhGxwQGj+2hBwBbBcN7ECRIpmV7ZTIPyVyHUDOsjg5/9dsN7YxcnJWiPoKXvPsIRMqWqTerOGir4TT2rbvxqE7cdtVfjaVqyqLzpDLhZc78QZYc7OI5sq2eeGGw1nj3FF8zbtUdHBBY5Bw658hunHQ0Ac8P+TLAcyk+auLm6WLOeauTWj1kKKEO//88Bpf7lDgvtV6sL2E+3fA4qsA9RBZ81mCdRZXJB9pFi9uxPLWNqb19WN0ll/jYqMUohJypVKC32COeXdEPsqmSdaf+rpzptlzrQnJ0mBwo53Zf6tv67v7hufTy3yN0WwOwf2LGHiiEnyfK3nDyae8BeTVBAwfDnuDfTXwTe3d0LKHSUz/AaU4NN0=
-hideInToc: true
----
-##### Liaison de données réactives (Composition API)
-
-Comme déjà mentionné, Vue utilise le binding via un un système de réactivité pour lier une donnée à la vue.
-
+La réactivité se repose sur les [Proxys](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Proxy).
 
 ---
 layout: fact
@@ -361,6 +353,49 @@ level: 5
 hideInToc: true
 ---
 # Réactivité <small>ou</small> Immutabilité ?
+
+---
+title: Réactivité ou Immutabilité
+level: 5
+layout: two-cols-header
+hideInToc: true
+---
+# Réactivité <small>ou</small> Immutabilité ?
+
+<style>h1 { text-align: center }</style>
+
+::left::
+
+<v-click fade hide>
+<div>
+
+La réactivité est une manière de gérer les données, et c'est d'ailleurs la plus naturelle de le faire.
+
+Il s'agit de modifier la valeur directement, quelle soit constante ou non.
+
+```js
+let texte = 'Bonjour'
+const article = { nom: 'Sac' }
+
+texte += ' !'
+article.prix = 0.85
+```
+
+Vue (ainsi que Angular, Svelte et Solid) le pratique pour rendre l'usage le plus naturel.
+
+**Un inconvénient existe :**<br> pour des développeurs non avertis, il peut vite arriver des surprises avec les référence.
+
+</div>
+</v-click>
+
+::right::
+
+<v-after>
+
+L'immutabilité est inspiré du monde fonctionnel où pour modifier une donnée, il faut en retourner une nouvelle.
+
+</v-after>
+
 ---
 ---
 ##### Rendu conditionnel
