@@ -381,7 +381,7 @@ texte += ' !'
 article.prix = 0.85
 ```
 
-Vue (ainsi que Angular, Svelte et Solid) le pratique pour rendre l'usage le plus naturel.
+Vue (ainsi que Angular, Svelte et Solid) le pratique pour aligner les changements côté client automatiquement.
 
 **Un inconvénient existe :**<br> pour des développeurs non avertis, il peut vite arriver des surprises avec les référence.
 
@@ -392,7 +392,22 @@ Vue (ainsi que Angular, Svelte et Solid) le pratique pour rendre l'usage le plus
 
 <v-after>
 
-L'immutabilité est inspiré du monde fonctionnel où pour modifier une donnée, il faut en retourner une nouvelle.
+L'immutabilité est inspirée du monde fonctionnel où pour modifier une donnée, il faut en retourner une nouvelle.
+
+```js
+const article = { nom: 'Sac' }
+function ajouterPrix (prix) {
+  return {
+    ...article,
+    prix
+  }
+}
+const newArticle = ajouterPrix(0.85);
+```
+
+Une sécurité dans la manipulation de la donnée au détriment de la simplicité.
+
+**Un inconvénient existe :**<br> performance au runtime pouvant être moindre
 
 </v-after>
 
