@@ -81,7 +81,7 @@
   }
 
   blockquote {
-    --at-apply: text-sm px-2 py-1 bg-$prism-background border-$slidev-theme-primary border-x-3;
+    --at-apply: text-sm px-2 py-2 pl-4 bg-$prism-background border-$slidev-theme-primary border-1 rounded opacity-80;
   }
 
   blockquote>* {

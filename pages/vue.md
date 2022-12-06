@@ -39,7 +39,7 @@ level: 2
 layout: fact
 hideInToc: true
 ---
-# Framework <small>ou</small> Librairie ?
+<h1>Framework <small>ou</small> Librairie ?</h1>
 
 <v-click>
 
@@ -158,6 +158,7 @@ Ainsi, il est interdit de :
 </div>
 
 ---
+title: Atomic Design
 layout: image-left
 image: https://atomicdesign.bradfrost.com/images/content/atomic-design-process.png
 split: 1/3
@@ -335,6 +336,35 @@ url: https://sfc.vuejs.org/#eNqNUctOwzAQ/JXFl4DUxKLApUorHjek/oEvIdm2LvEDex2Eovw7
 Pour rendre une variable de type texte dans le template via les moustaches `{{ ... }}`.
 
 Le contenu doit être une expression javascript.
+
+---
+---
+##### Les directives <Reference to="guide/essentials/template-syntax.html#directives" />
+
+Dans le template, Vue propose de rendre certains attributs prédéfinis ou personnalisés pour manipuler les éléments.
+
+Préfixés par `v-`, la valeur de l'attribut doit être une expression javascript.
+
+> Expression javascript, c'est-à-dire quelque chose que l'on peut mettre après un `return` dans une fonction.
+
+Les directives acceptent des arguments (via `:argument`) et des modificateurs (via `.modifier`).
+
+Exemple d'une directive faite-maison :
+
+```vue-html
+<div v-detective:class.uppercase="maValeur"></div>
+<!-- 
+  Utilisation de la directive `detective` avec 
+  pour argument `class`,
+  pour modificateur `uppercase` et 
+  comme valeur d'attribut de `maValeur` 
+-->
+```
+
+Vue en propose dans son language de template des directives prêtes à l'emploi. <carbon-arrow-right animate-pulse />
+
+
+
 <!-- Voir le rendu JS pour avoir une idée de la gestion sous jascente -->
 ---
 layout: iframe-right
@@ -345,6 +375,11 @@ url: https://sfc.vuejs.org/#eNp9UtFu2zAM/BVOe8gGNDbQtdvgukO279CLYrGZG1sSJLpLEPjf
 Comme déjà mentionné, Vue utilise le binding via un un système de réactivité pour lier une donnée à la vue.
 
 La réactivité se repose sur les [Proxys](https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Global_Objects/Proxy).
+
+___
+
+Le modifier `v-bind` permet de lier une donnée à un attribut. 
+`:` étant son raccourci
 
 ---
 layout: fact
@@ -368,6 +403,7 @@ hideInToc: true
 
 <v-click fade hide>
 <div>
+<Reference absolute to="guide/essentials/reactivity-fundamentals.html#reactivity-fundamentals" />
 
 La réactivité est une manière de gérer les données, et c'est d'ailleurs la plus naturelle de le faire.
 
@@ -381,7 +417,8 @@ texte += ' !'
 article.prix = 0.85
 ```
 
-Vue (ainsi que Angular, Svelte et Solid) le pratique pour aligner les changements côté client automatiquement.
+Vue (ainsi que Angular, Svelte et Solid) le pratique pour aligner les changements côté client automatiquement. 
+
 
 **Un inconvénient existe :**<br> pour des développeurs non avertis, il peut vite arriver des surprises avec les référence.
 
@@ -411,15 +448,16 @@ Une sécurité dans la manipulation de la donnée au détriment de la simplicit�
 
 </v-after>
 
+
 ---
 ---
-##### Rendu conditionnel
+##### Rendu conditionnel <Reference to="guide/essentials/conditional.html" />
+
+Vue propose une directive
+
 ---
 ---
 ##### Rendu de boucles 
----
----
-##### Les directives
 ---
 ---
 #### optimiser la manipulation du DOM

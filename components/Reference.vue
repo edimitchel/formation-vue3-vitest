@@ -24,7 +24,7 @@ a.reference {
     }
 
     a & {
-        pointer-events: none;
+        display: none;
     }
 }
 </style>
