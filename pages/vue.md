@@ -162,6 +162,7 @@ title: Atomic Design
 layout: image-left
 image: https://atomicdesign.bradfrost.com/images/content/atomic-design-process.png
 split: 1/3
+hideInToc: true
 ---
 
 La composition dans une application consiste en l'utilisation de plusieurs composantes pour former un organisme muni de corps inter-dépendants.
