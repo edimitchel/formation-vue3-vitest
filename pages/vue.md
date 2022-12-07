@@ -163,6 +163,7 @@ layout: image-left
 image: https://atomicdesign.bradfrost.com/images/content/atomic-design-process.png
 split: 1/3
 hideInToc: true
+level: 3
 ---
 
 La composition dans une application consiste en l'utilisation de plusieurs composantes pour former un organisme muni de corps inter-dépendants.
@@ -364,8 +365,6 @@ Exemple d'une directive faite-maison :
 
 Vue en propose dans son language de template des directives prêtes à l'emploi. <carbon-arrow-right animate-pulse />
 
-
-
 <!-- Voir le rendu JS pour avoir une idée de la gestion sous jascente -->
 ---
 layout: iframe-right
@@ -459,14 +458,15 @@ Vue propose une directive
 ---
 ---
 ##### Rendu de boucles 
+
 ---
 ---
 #### optimiser la manipulation du DOM
+
 ---
 ---
 ### Évènements et interactions
 
----
 ---
 title: Options API ou Composition API ?
 level: 2
@@ -474,7 +474,6 @@ layout: fact
 ---
 # Options API <small>ou</small> Composition API ?
 ## De la simplicité à la complétude
-
 ---
 ---
 ### Les Macros
