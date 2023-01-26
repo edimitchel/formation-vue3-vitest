@@ -286,7 +286,6 @@ Respecter les responsabilités de chacun assure une bonne organisation, et perme
 
 ::right::
 
-<v-click>
 <div pl-4>
 
 Les **composants monofichiers**, <br>ou les [Single-File Component (SFC)](https://vuejs.org/guide/scaling-up/sfc.html), apportent l'union des trois au sein d'un même fichier.
@@ -315,7 +314,6 @@ export default {
 ```
 
 </div>
-</v-click>
 <!-- "Le CSS aussi" : Référence aux solution CSS-in-JS très coûteuse au runtime -->
 
 ---
