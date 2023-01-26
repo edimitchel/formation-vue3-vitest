@@ -455,9 +455,11 @@ url: https://sfc.vuejs.org/#eNqFUsFOwzAM/ZUoEhKItRkDLlOLxp0DEtdcstaDsCaNEqcgTft3
 
 Vue propose une directive pour rendre un élément de manière conditionnelle.
 
-`v-if` prend comme valeur une condition boolean, <br>si vrai, va rendre l'élément, <br>si faux, ne va pas le rendre (et le retirer).
+`v-if` prend comme valeur une condition boolean,  
+si vrai, va rendre l'élément,  
+si faux, ne va pas le rendre (et le retirer).
 
-À la manière des conditions JS, on peut coupler des blocs via `v-else-if` et `v-else`.
+À la manière des conditions JS, on peut coupler des blocs via `v-else-if` et/ou `v-else`.
 
 ---
 layout: iframe-right
@@ -491,7 +493,37 @@ On peut destructurer l'information et extraire l'information comme en JS
 </v-after>
 ---
 ---
-#### optimiser la manipulation du DOM
+#### optimiser la manipulation du DOM <Reference to="guide/extras/rendering-mechanism.html#compiler-informed-virtual-dom" />
+
+L'usage du Virtual DOM est déjà une optimisation de la manipulation DOM (très couteuse), présente depuis les débuts de Vue.
+
+<div v-click max-w-400px mx-auto fade>
+
+![](/virtual-dom.png)
+
+</div>
+<div v-click>
+
+> Info: Vue travaille sur un mode appelé "**Vapor**" qui optimise l'usage du DOM sans Virtual DOM (à la sauce Solid.js)
+
+</div>
+---
+hideInToc: true
+---
+#### optimiser la manipulation du DOM <Reference to="guide/extras/rendering-mechanism.html#compiler-informed-virtual-dom" />
+
+React utilise également le Virtual DOM mais un point d'optimisation lui manque : 
+**la capacité changer son comportement de rendu sur les éléments statiques (sans contenu dynamique).**
+
+Lors de la compilation, Vue va travailler en amont pour différentier les éléments :
+
+- hisser les éléments staiques <Reference to="guide/extras/rendering-mechanism.html#static-hoisting" />
+- marquer les attributs dynamiques <Reference to="guide/extras/rendering-mechanism.html#patch-flags" />
+- identifier les blocs d'éléments selon certains critères <Reference to="guide/extras/rendering-mechanism.html#tree-flattening" />
+
+<br>
+
+> À l'exécution, Vue va éviter plusieurs opérations inutiles au DOM pour ne concentrer que celles qui soient absolument nécessaires.
 
 ---
 ---
