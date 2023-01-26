@@ -1,6 +1,7 @@
 <template>
-    <a class="reference" :href="link" :title="title" target="_blank" text-xl :class="absolute ? 'absolute top-12 right-10' : 'relative ml'">
-        <carbon-notebook-reference />
+    <a class="reference" :href="link" :title="title" target="_blank" :text-xl="!$slots.default"
+        :class="absolute ? 'absolute top-12 right-10' : `relative ${$slots.default ? '' : 'ml'}`">
+        <slot /> <carbon-notebook-reference />
     </a>
 </template>
 <script setup lang="ts">
@@ -14,13 +15,13 @@ const props = withDefaults(defineProps<{ to: string; title?: string; absolute?: 
 const link = props.to.startsWith('https://') ? props.to : `${VUE_DOCS}${props.to}`
 
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 a.reference {
     transition: all 200ms;
 
     &:hover {
         @apply: !text-vue inline-block;
-        transform: translateX(2px) translateY(-2px);
+        transform: translateX(2px);
     }
 
     a & {

@@ -552,24 +552,27 @@ Vue propose une multitude de bonnes pratiques à suivre pour éviter les pièges
 <v-clicks>
 <div>
 
-- Définir les types des props correctement
+- Définir les types des props correctement <Reference to="style-guide/rules-essential.html#use-detailed-prop-definitions" />
 > Avec des types bien définis, les erreurs bêtes pourraient être évitées
 </div>
 <div>
 
-- Utiliser des clés sur les boucles via `v-for`
+- Utiliser des clés sur les boucles via `v-for` <Reference to="style-guide/rules-essential.html#use-keyed-v-for" />
 > Pour donner du contexte à Vue pour la modications de la liste
 </div>
 <div>
 
-- Eviter d'imbriquer `v-for` avec un `v-if`
+- Eviter d'imbriquer `v-for` avec un `v-if` <Reference to="style-guide/rules-essential.html#avoid-v-if-with-v-for" />
 > `v-if` ayant une priorité sur `v-for`, il peut y avoir des surprises: utiliser un `<template>` ou filtrer la liste en amont
 </div>
 <div>
 
-- Utiliser du style cloisoné niveau composant
+- Utiliser du style cloisoné niveau composant <Reference to="style-guide/rules-essential.html#use-component-scoped-styling" />
 > À l'exception des librairies, l'usage du `scoped style` évite que du style ne s'applique sans le vouloir en dehors du composant 
 </div>
+
+D'autres à voir sur le <Reference to="style-guide">style guide de Vue</Reference>
+
 </v-clicks>
 ---
 layout: image-right
