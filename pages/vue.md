@@ -589,3 +589,21 @@ La documentation Vue propose depuis sa nouvelle version un tutoriel ainsi que de
 <a href="https://vuejs-docs-fr.netlify.app/tutorial/" target="_blank">
   <button bg-vue p="y-2 x-4" text-white dark:text-black hover="opacity-75" uppercase text-xs rounded><carbon-play-outline-filled/> Résoudre les 15 étapes</button>
 </a>
+---
+hideInToc: true
+---
+
+## Mise en pratique (plus en profondeur)
+
+Créons ensemble une mini-application.
+
+Créer un nouveau projet avec la commande `npm create vite@latest` ou via [vite.new/vue-ts](https://vite.new/vue-ts) (en ligne).
+
+> Afficher une liste d'utilisateurs avec leur nom et pouvoir afficher les détails en cliquant dessus.  
+> Les détails doivent être affichés de manière bien distincte (faites appel à votre imagination)
+
+Utiliser la source de données [formation-vue.free.beeceptor.com](https://formation-vue.free.beeceptor.com)  
+Liste des utilisateurs: `/users`  
+Détails d'un utilisateur: `/users/<id>`
+
+<!-- https://beeceptor.com/console/formation-vue -->
