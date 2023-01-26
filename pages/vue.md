@@ -448,15 +448,47 @@ Une sécurité dans la manipulation de la donnée au détriment de la simplicit�
 
 
 ---
+layout: iframe-right
+url: https://sfc.vuejs.org/#eNqFUsFOwzAM/ZUoEhKItRkDLlOLxp0DEtdcstaDsCaNEqcgTft3nHatyiZBVbV5efaz/ZIDf3Yu7yLwNS9C5bXDJ2nh27UeWQ07FRtkB2kZqxWq65thzZgHjN6OiLGA4NZsOcBj+tGH3kJMogQQjGsUAiHGilp3/SI9RXDKsi7Tu1LyJMbKsmR3kk8Rrx6MBj9AkqX4EzfmQhNgJnDFVr3Ici6i9H8KU+wLBKYieggXGYUYe+/RNiK2NF+K2lSNrvanHm5vJafB0/SJe4u6UxYHhSGJmEJMtvAF1yZZnxnl8s/QWjqW3mN5IoLk69F1yencEpb8A9GFtRDRuv17XrVGbIgTPlrUBrK6NZv7fJU/PFLjAef7OQSTbX37FcBTRckXM3FBmx34zIOtwZP5fxU7i/1V8Iy7KDpeGH78AUUk1Aw=
 ---
 ##### Rendu conditionnel <Reference to="guide/essentials/conditional.html" />
 
-Vue propose une directive
+Vue propose une directive pour rendre un élément de manière conditionnelle.
+
+`v-if` prend comme valeur une condition boolean, <br>si vrai, va rendre l'élément, <br>si faux, ne va pas le rendre (et le retirer).
+
+À la manière des conditions JS, on peut coupler des blocs via `v-else-if` et `v-else`.
 
 ---
+layout: iframe-right
+url: https://sfc.vuejs.org/#eNp9UFtOwzAQvMrKPwWpiSUeP1GoyjkwH6HZgiF+dG2HSlHuziYhVVIkJMvemX2Mdzrx7H3eJhSFKMOBtI87ZfHsHUWo8VilJkKnLEBdxermdooBCGMiOyOARoeIBbzMGGCT7Ga7gDWm84qI5HRYMadURcIVddD2tCKCXkx5nYJ+ePjiU8rLEgwiGt9UERkBlKkZX44aDW12dPSkhOYa0HZaQIld1w1M35ey0VObHPtKeRkmtkKbwaDMVD7/DM6yeaMTPG5MBCWK2Rsl2N0BK/ERow+FlMn6r/f84Izcc05SslEbzGpn9vf5Xf7wKGv+zZLPMZjsjdx3QGJFJX4tGIdLJlukjNDWSEj/il3VrgSvcn9EZ5tF/wNgt7TT
 ---
-##### Rendu de boucles 
+##### Rendu de boucles <Reference to="guide/essentials/list.html" />
 
+Pour transformer une liste de données en liste d'éléments, la directive `v-for` est de rigeur.
+
+Il permet de répéter l'élément auquel il est utilisé et donner un contexte pour afficher les données.
+
+<v-click hide>
+
+```vue-html
+<section v-for="information in informations">
+  <datetime>{{ information.date }}</datetime>
+</section>
+```
+</v-click>
+
+
+<v-after>
+
+On peut destructurer l'information et extraire l'information comme en JS
+```vue-html
+<section v-for="{ date } in informations">
+  <datetime>{{ date }}</datetime>
+</section>
+```
+
+</v-after>
 ---
 ---
 #### optimiser la manipulation du DOM
@@ -476,6 +508,10 @@ layout: fact
 ---
 ### Les Macros
 https://vue-macros.sxzz.moe
+
+---
+---
+## Bonnes pratiques <Reference to="style-guide" />
 
 ---
 layout: image-right
