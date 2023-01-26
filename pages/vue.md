@@ -461,6 +461,8 @@ si faux, ne va pas le rendre (et le retirer).
 
 À la manière des conditions JS, on peut coupler des blocs via `v-else-if` et/ou `v-else`.
 
+L'autre alternative pour cacher sans supprimer : `v-show` qui va simplement appliquer un style pour faire disparaitre de l'écran.
+
 ---
 layout: iframe-right
 url: https://sfc.vuejs.org/#eNp9UFtOwzAQvMrKPwWpiSUeP1GoyjkwH6HZgiF+dG2HSlHuziYhVVIkJMvemX2Mdzrx7H3eJhSFKMOBtI87ZfHsHUWo8VilJkKnLEBdxermdooBCGMiOyOARoeIBbzMGGCT7Ga7gDWm84qI5HRYMadURcIVddD2tCKCXkx5nYJ+ePjiU8rLEgwiGt9UERkBlKkZX44aDW12dPSkhOYa0HZaQIld1w1M35ey0VObHPtKeRkmtkKbwaDMVD7/DM6yeaMTPG5MBCWK2Rsl2N0BK/ERow+FlMn6r/f84Izcc05SslEbzGpn9vf5Xf7wKGv+zZLPMZjsjdx3QGJFJX4tGIdLJlukjNDWSEj/il3VrgSvcn9EZ5tF/wNgt7TT
@@ -545,6 +547,30 @@ https://vue-macros.sxzz.moe
 ---
 ## Bonnes pratiques <Reference to="style-guide" />
 
+Vue propose une multitude de bonnes pratiques à suivre pour éviter les pièges au fur et à mesure du développement d'applications, voici quelques unes :
+
+<v-clicks>
+<div>
+
+- Définir les types des props correctement
+> Avec des types bien définis, les erreurs bêtes pourraient être évitées
+</div>
+<div>
+
+- Utiliser des clés sur les boucles via `v-for`
+> Pour donner du contexte à Vue pour la modications de la liste
+</div>
+<div>
+
+- Eviter d'imbriquer `v-for` avec un `v-if`
+> `v-if` ayant une priorité sur `v-for`, il peut y avoir des surprises: utiliser un `<template>` ou filtrer la liste en amont
+</div>
+<div>
+
+- Utiliser du style cloisoné niveau composant
+> À l'exception des librairies, l'usage du `scoped style` évite que du style ne s'applique sans le vouloir en dehors du composant 
+</div>
+</v-clicks>
 ---
 layout: image-right
 image: /vue-tutoriel.png
