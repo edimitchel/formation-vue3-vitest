@@ -576,6 +576,34 @@ Depuis le template, l'usage de `$emit` permet de le faire en fournissant en para
 - les éventuelles données à transmettre
 
 ---
+layout: image-right
+image: /transition-classes.png
+---
+#### Transition entre état et style <Reference to="guide/built-ins/transition.html" />
+
+Après certaines interactions utilisateur, il peut y avoir besoin d'afficher ou cacher des éléments de manière fluide:
+
+Pour cela, les `Transition` peuvent avoir leur rôle à jouer.
+
+Les transitions jouent sur les changements d'état et synchronise des classes d'entrée et de sortie de manière à pouvoir styliser les éléments et utiliser des transitions CSS.
+
+Il est possible de modifier le comportement du modification du DOM via le mode : 'out-in' qui permet d'attendre la fin de l'animation de sortie pour ajouter l'élément suivant à afficher.
+---
+hideInToc: true
+layout: iframe-right
+url: https://sfc.vuejs.org/#eNp9VM1u2zAMfhXOGOAWqO2uay9eunXrrjut2MkXxVIcrbIkSHTaIMgD7Tn2YqPknzjJNiCxLZIfP/6I3CWfrc03nUjKZOFrJy1+rLRsrXEIj6a1sHKmhTQvwiEYppUWr1HNxYp1CmFXaYCa1EYLjb7sBRDh4Wt/FZ6cIbu4HHVOYOc07MJ3pSsMby6QSfV9bV50CSumvOht9wcnrcC14QcKo79G0JNpGiUuPDIUEwcArqXPZ27hHt5Em7njStNvUUzJ0wFFaxWZ0QlgsZJCcS+CLqAWsSwPGCl7+vsqOY6kSqBkNcqNINUsAJIXo5snx7SXKI0GzdpguGI8IFvDw8l0mElCDPaE4HIDm0yuTn1OFgA/jKwlKOGB//4VTPyELgg+chcH8j7HYpbkopjlT0ePW9WXYtkhUrhDfbn0ZLUtYalM/fwhCCtcGseFK+HGvoI3SnJonNhGJeGjMnOMy46aeGtfoyL2IfzHIM4YVkr0pmRDnxmXTlB5DV2U2qiu1YOyYfbgFoAp2ehMUjrEFoHUfYeDtmWukTpDQ5h31xPIMs6lbmYyii+88tCfjK44pdA3N97JXqwE24hBPIaPU5FLMJbVErdwnd95EMyLf3kO83bmF81043s/JVyPDujqxgYlV0k/t1nLbP7TG00zHVHVoPBVMk1OldAsh3OVrBGtL4ui0/a5yWmQiwfSFa7TKFuRcdM+vM9v8ts7ukEe5/Jc+DZbOvPihSPGKomBD84LEm5Ct4Wmpgv3X7IT2yPCE90Z6TjFVIBxSR1ts7+tK+sMhTEWo29bCV+MoXrHlpythZOlMIzCQ61k/UwD+Va0Ei/S+VZIrwbHl9OI7naDCD5B+sjqtXAplJB+MxoptRT2+7PhXRQ91/FkJvs/N43sow==
+---
+#### Transition entre état et style <Reference to="guide/built-ins/transition.html" />
+
+Après certaines interactions utilisateur, il peut y avoir besoin d'afficher ou cacher des éléments de manière fluide:
+
+Pour cela, les `Transition` peuvent avoir leur rôle à jouer.
+
+Les transitions jouent sur les changements d'état et synchronise des classes d'entrée et de sortie de manière à pouvoir styliser les éléments et utiliser des transitions CSS.
+
+Il est possible de modifier le comportement du modification du DOM via le mode : 'out-in' qui permet d'attendre la fin de l'animation de sortie pour ajouter l'élément suivant à afficher.
+
+---
 title: Options API ou Composition API ?
 level: 2
 layout: fact
@@ -584,8 +612,18 @@ layout: fact
 ## De la simplicité à la complétude
 ---
 ---
-### Les Macros
-https://vue-macros.sxzz.moe
+
+- intro préférence OAPI/CAPI
+- forces/faiblesses
+- ref / reactive
+- setup
+- macros
+- defineProps / defineEmits
+- Vue Use
+
+---
+---
+### Les Macros <Reference to="https://vue-macros.sxzz.moe" />
 
 ---
 ---
