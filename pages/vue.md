@@ -611,24 +611,323 @@ layout: fact
 # Options API <small>ou</small> Composition API ?
 ## De la simplicité à la complétude
 ---
+hideInToc: true
+---
+# Options API <small>ou</small> Composition API ?
+
+Vue s'est fait connaître pour sa simplicité et sa facile prise en main. Ceci est surtout du à son API utilisant des options sous forme d'objet.
+
+<style>
+.shiki-container {
+  --slidev-code-font-size: 8px;
+  --slidev-code-line-height: 10px;
+}
+</style>
+
+<div flex gap-4 justify-around>
+
+<v-click fade>
+```js
+// Options API
+
+export default {
+  props: {
+    userId: Number,
+  },
+  data() {
+    return {
+      activeUser: null
+    };
+  },
+  mounted() {
+    this.fetchActiveUser();
+  },
+  watch: {
+    userId() {
+      this.fetchActiveUser();
+    }
+  },
+  methods: {
+    fetchActiveUser() {
+      fetch(`/user/${this.userId}`).then((user) => this.activeUser = user)
+    }
+  },
+}
+```
+</v-click>
+
+<v-click>
+<div>
+```ts
+// Composition API
+
+export default {
+  setup() {
+    const props = defineProps<{ userId: number }>();
+
+    const activeUser = ref(null);
+
+    const fetchActiveUser = fetch(`/user/${props.userId}`)
+          .then(user => activeUser.value = user);
+
+    watchEffect(() => {
+      if (props.userId)
+        fetchActiveUser()
+    }, { immedicate: true });
+    
+    return { activeUser }
+  }
+}
+```
+Il y près de 3 ans est sortie la Composition API, nouveau paradigme, nouvelle vision, en plus de l'Options API
+
+</div>
+</v-click>
+</div>
+
+---
+layout: two-cols
 ---
 
-- intro préférence OAPI/CAPI
-- forces / faiblesses
-- ref / reactive
-- computed
-- setup
-- cycles de vie
-- macros
-  - defineProps / defineEmits
-- Utils: Vue Use
+## Les forces <span hidden>et faiblesse</span>
+
+### Options API
+- Simple d'utilisation
+- Organisation par sémantique
+
+<br>
+
+### Composition API
+- Du javascript sans notion de contexte
+- Organisation par fonctionnalité
+- Permet un découplage plus précis
+
+::right::
+
+## Les faiblesses
+### Options API
+- Support TypeScript limité
+- Découpage limité (via mixins)
+
+<br>
+
+### Composition API
+- Complexité plus forte et un certain niveau de JS à avoir
+- Les notions de ref compliqué à comprendre
 
 ---
 ---
+## À la découverte de la <strong text-vue>Composition API</strong>
+
+On va partir du principe que l'Options API (OAPI) est acquise. Nous partons donc à la découverte de la Composition API (CAPI).
+
+Elle propose une évolution nette qui peut sembler déroutant de premier abord et elle offre une multitude de possibilité pour manipuler les données et les éléments de manière toujours aussi réactive.
+
+> Pour information, la CAPI est accessible à la fois pour la version 2 (à partir de la version 2.7) et la version 3 de Vue.
+
+<v-click>
+
+<span text-xl>C'est parti !</span>  
+Tout commence avec la nouvelle méthode `setup` qui permet d'enregistrer en une *seule exécution* tout les principes de réactivité **d'un composant**.
+
+</v-click>
+---
+---
+
+## Déclarer des variables réactives
+
+> Pour rappel, une variable réactive est par convention une variable que l'on modifie directement, et qui suite au changement, peut entraîner des effets de bord. La réactivité utilise la fonctionnalité Proxy de JavaScript.
+
+<div flex gap-4>
+<v-click>
+<div>
+
+Pour identifier une variable réactive, il existe la première solution pour toute variables dites primitives (string, number, boolean) et tableaux.
+- `ref()`: retourne une référence vers une donnée dynamique, prenant en argument sa valeur par défaut.
+
+```ts
+import { ref } from 'vue'
+setup() {
+  const nom = ref('André');
+  nom.value = 'Jean'
+}
+```
+</div>
+</v-click>
+<v-click>
+<div>
+
+La seconde solution sera moins courante mais intéressante pour regrouper plusieurs ref, à utiliser pour des objets.
+- `reactive()`: prévu pour créer un objet réactif, s'apparente à l'ancien `data()` de l'OAPI, prenant en argument sa valeur par défaut.
+
+```ts
+import { ref } from 'vue'
+setup() {
+  const data = reactive({ nom: 'André' })
+  data.nom = 'André'
+}
+```
+</div>
+</v-click>
+</div>
+
+<v-click>
+
+`ref` est à privilégier pour la plupart des cas d'usage.  `reactive` est à voir comme un objet const qui ne peut être réassigné mais ses membres si. `reactive` a un intérêt fort pour passer un ensemble de `ref` entre fonctions. **Ces règles sont imposées pour préserver la réactivité**
+
+</v-click>
+
+---
+---
+## Transmettre les données à la vue
+
+Via la fonction `setup()` au sein du composant, toutes les données (réactives ou non) retournées par la fonction sera accessible au template.
+<div :hidden="$slidev.nav.clicks === 0">
+
+Ou, avec l'option `setup` sur `<script>`, les variables accessibles dans le block le seront dans le template
+
+</div>
+
+<style>
+.shiki-container {
+  --slidev-code-font-size: 8px;
+  --slidev-code-line-height: 10px;
+}
+</style>
+
+```vue {1-13,21-23|14-18,20-22}
+<script>
+  import VERSION from 'constant.js';
+  import { ref } from 'vue'
+  export default {
+    setup() {
+      const user = ref('');
+      return {
+        user,
+        version: VERSION
+      }
+    }
+  }
+</script>
+
+<script setup>
+  import { ref } from 'vue'
+  import { VERSION: version } from 'constant.js';
+  const user = ref('');
+</script>
+
+<template>
+  {{ user }} {{ version }}
+</template>
+```
+---
+layout: iframe-right
+url: https://sfc.vuejs.org/#eNp9kL1uhTAMhV/FzQJIENQVAVLVpUvHqksWCuZersiPnEAHxLvXufS/Urec4+Mvtjdx55xcFxSVqH1PkwvgMSyuVWbSzlKADQjHHHqr3RJwgB1GshoSbkqUUaa3xgfQ/gRNTKbJA86zhWdL83CTZF+RxTmkvvP4eM1+ANM0g6aNALl284Iy2KeYvOdkmnF/XR6D8UgsAmo3dwFZAdSTYQashbYDzo0STFHiKJ1v2237+em+1yXbEfmJEbk4Fi105+TFW8On2CJBvRe8EhVcnejx2lErcQ7B+aos/djHA168tHQq+SVpMWHSKNHr4oXsq0disBL5N0bJ5opUEJoBCek/5q/oH27E7srsYn8DEE2hWA==
+---
+## Les données dérivées
+
+Dériver une donnée se fait comme avant, via `computed`.
+
+```ts
+import { ref, computed } from 'vue'
+const user = ref('  roland ');
+const userName = computed(() => {
+  const name = user.value.trim(' ');
+  return name.at(0).toUpperCase() + name.substr(1)
+}
+```
+<br>
+
+> `computed` retourne une `ref`.  
+Dès lors qu'une ref change dans la fonction, elle sera recalculée automatiquement. 
+
+---
+---
+## Les composables
+
+Pour extraire de la logique et pouvoir la réutiliser, il suffit de créer un function, avec ou sans paramètre. Celle-ci peut retourner au besoin des données réactives.
+
+> Les composables par conventions commencent par `use`, par exemple, un composable pour récupérer l'utilisateur actif pour s'appeler `useActiveUser`.
+
+```ts
+import { ref } from 'vue'
+
+export const useActiveUser = () => {
+  const user = ref(null);
+
+  const checkAuthentication = () => {
+    // ...
+  }
+
+  return {
+    user,
+    checkAuthentication,
+  };
+}
+```
+
+
+---
+layout: two-cols
+split: 2/3
+---
+## Les cycles de vie
+
+Pour effectuer des actions pendant le cycle de vie du composant ou d'un composable, voici quelques hooks disponibles :
+
+- `onMounted`: exécuté lorsque le composant est monté (càd ajouté au DOM) <Reference to="api/composition-api-lifecycle.html#onmounted" />
+- `onUpdated`: exécuté lorsque le composant a subi une mise à jour <Reference to="api/composition-api-lifecycle.html#onupdated" />
+- `onUnmounted`: exécuté lorsque le composant est démonté (càd retiré du DOM) <Reference to="api/composition-api-lifecycle.html#onunmounted" />
+- `onErrorCaptured`: exécuté lorsque le composant ou un enfant a émit une erreur <Reference to="api/composition-api-lifecycle.html#onerrorcaptured" />
+
+:: right ::
+```ts
+import { ref, onMounted, onUnmounted } from 'vue'
+export const useActiveUser = () => {
+  const user = ref(null);
+
+  const checkAuthentication = () => {
+    // ...
+  }
+
+  onMounted(() => {
+    checkAuthentication();
+  });
+
+  onUnmounted(() => {
+    disconnect();
+  });
+  
+  return {
+    user,
+  };
+}
+```
+
+---
+---
+
+## Définir les props et les émits via des macros
 ### Les Macros <Reference to="https://vue-macros.sxzz.moe" />
+- defineProps 
+- defineEmits
+
+
 
 ---
 ---
+## Utiliser l'Options API avec la Composition API ?
+
+---
+---
+## Outils à utiliser pour ne pas recréer la roue
+
+<Reference to="https://vueuse.org/">Vue Use</Reference> propose une multitude de fonctionnalités utiles au quotidien fonctionnant la plupart avec les deux versions de Vue.
+
+![](/vueuse.png)
+---
+---
+
 ## Bonnes pratiques <Reference to="style-guide" />
 
 Vue suggère une multitude de bonnes pratiques à suivre pour éviter les pièges au fur et à mesure du développement d'applications. En voici quelques unes :
