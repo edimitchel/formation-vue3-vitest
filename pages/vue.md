@@ -593,17 +593,18 @@ La documentation Vue propose depuis sa nouvelle version un tutoriel ainsi que de
 hideInToc: true
 ---
 
-## Mise en pratique (plus en profondeur)
+## Mise en pratique (suite)
 
 Créons ensemble une mini-application.
 
 Créer un nouveau projet avec la commande `npm create vite@latest` ou via [vite.new/vue-ts](https://vite.new/vue-ts) (en ligne).
 
 > Afficher une liste d'utilisateurs avec leur nom et pouvoir afficher les détails en cliquant dessus.  
-> Les détails doivent être affichés de manière bien distincte (faites appel à votre imagination)
+> Les détails doivent être affichés de manière bien distincte (faites appel à votre imagination)  
+> Pensez à créer autant de composants que nécessaire pour bien découper les parties de l'application
 
-Utiliser la source de données [formation-vue.free.beeceptor.com](https://formation-vue.free.beeceptor.com)  
-Liste des utilisateurs: `/users`  
-Détails d'un utilisateur: `/users/<id>`
+Utiliser la source de données [formation-vue.free.beeceptor.com](https://formation-vue.free.beeceptor.com)
+> Liste des utilisateurs: `/users`  
+> Détails d'un utilisateur: `/users/<id>`
 
 <!-- https://beeceptor.com/console/formation-vue -->
