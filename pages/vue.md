@@ -614,12 +614,14 @@ layout: fact
 ---
 
 - intro préférence OAPI/CAPI
-- forces/faiblesses
+- forces / faiblesses
 - ref / reactive
+- computed
 - setup
+- cycles de vie
 - macros
-- defineProps / defineEmits
-- Vue Use
+  - defineProps / defineEmits
+- Utils: Vue Use
 
 ---
 ---
@@ -629,9 +631,9 @@ layout: fact
 ---
 ## Bonnes pratiques <Reference to="style-guide" />
 
-Vue propose une multitude de bonnes pratiques à suivre pour éviter les pièges au fur et à mesure du développement d'applications, voici quelques unes :
+Vue suggère une multitude de bonnes pratiques à suivre pour éviter les pièges au fur et à mesure du développement d'applications. En voici quelques unes :
 
-<v-clicks>
+<v-clicks fade>
 <div>
 
 - Définir les types des props correctement <Reference to="style-guide/rules-essential.html#use-detailed-prop-definitions" />
@@ -653,7 +655,29 @@ Vue propose une multitude de bonnes pratiques à suivre pour éviter les pièges
 > À l'exception des librairies, l'usage du `scoped style` évite que du style ne s'applique sans le vouloir en dehors du composant 
 </div>
 
-D'autres à voir sur le <Reference to="style-guide">style guide de Vue</Reference>
+</v-clicks>
+---
+---
+## Bonnes pratiques <Reference to="style-guide" />
+
+<v-clicks fade at="0">
+<div>
+
+- Les raccourcis de directives <Reference to="style-guide/rules-strongly-recommended.html#directive-shorthands" />
+> Les raccourcis de directives (`:` pour `v-bind:`, `@` pour `v-on:` et `#` pour `v-slot`) doivent toujours être utilisés ou ne jamais l'être.
+</div>
+<div>
+
+- Expressions simples dans les templates <Reference to="style-guide/rules-strongly-recommended.html#simple-expressions-in-templates" />
+> Les templates de composants ne doivent inclure que des expressions simples, avec des expressions plus complexes refactorisées en propriétés calculées ou en méthodes.
+</div>
+<div>
+
+- Propriétés calculées simples   <Reference to="style-guide/rules-strongly-recommended.html#simple-computed-properties" />
+> Les propriétés calculées complexes doivent être divisées en propriétés plus simples.
+</div>
+
+D'autres règles à suivre sur la page <Reference to="style-guide">des bonnes pratiques en Vue</Reference>
 
 </v-clicks>
 ---
