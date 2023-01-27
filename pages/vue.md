@@ -531,6 +531,50 @@ Lors de la compilation, Vue va travailler en amont pour différentier les élém
 ---
 ### Évènements et interactions
 
+<Toc mode="filterOnlyCurrentTree" minDepth="4" />
+
+---
+---
+#### Écouter les événements <Reference to="guide/essentials/event-handling.html" />
+
+La directive `v-on` ou son raccourci `@` permet d'ajouter une écoute d'évènements sur un élément.
+
+Des modificateurs sont également applicables à cette directive: <Reference to="guide/essentials/event-handling.html#event-modifiers" />
+- `.prevent`: permet d'annuler le comportement par défaut (`event.preventDefault()`)
+- `.stop`: permet de stoper la propagation de l'évènement (`event.stopPropagation()`)
+- `.self`: restreind l'écoute d'événement à l'élément seul (en excluant ses enfants)
+  > TIP  
+    L'ordre est important lors de l'utilisation de modificateurs, car le code correspondant est généré dans le même ordre. Par conséquent, l'utilisation de `@click.prevent.self` empêchera l'action par défaut du clic sur l'élément lui-même et ses enfants, tandis que `@click.self.prevent` empêchera uniquement l'action par défaut du clic sur l'élément lui-même.
+- `.enter, .tab, .delete, .esc, .space, .up, .down, .left, .right` pour le clavier
+- `.ctrl, .alt, .shift, .meta` pour le clavier et souris
+- `.left, .right, .middle` pour la souris
+- `.exact`: à utiliser avec d'autres modificateurs, va uniquement écouter l'événément correspondant exactement aux modificateurs
+
+---
+hideInToc: true
+layout: iframe-right
+url: https://sfc.vuejs.org/#eNq1Vc1u2zAMfhXCGJAWre2t6y5Z2qUYdtttV18Ui3HUyJIg0WmDog+059iLjZLjNEnbbAU2IIl+SH3fR4aiHrIb54pVh9k4m4TaK0fXlcF7Zz2BxLnoNMFDZQBapIWVYdyvAGqt6hNcoaFzaK1Uc4UermA0Oh08AIRGT71TQWuHcAYnW98vMAKxwpqHsyeEcUQ47QEezwcqsWLbwCYFib9hSn6RhTF5nZZ78HHgH/5Mym3svCBsnRaEvAKYsCwtA0ZbPDWZdUSW3XriaczD8qrK4lhl/fbGlWV1KU9grG+F3gCUPcIxvEJoYswUD1xd7yV7xLbR6atUKaXs8gYyr5rF63Qz2/ERkN6qP/JqhF33FzRMyr187me3oomAhcc5i1kQuXFZcmnehsL6psoGuc4naZucn7wbhHYGtEITNV5/5wms0AfYAkAQJoBHqTzWpCz/6eINrNbU+M+oY9YYq40VH5EGKQfZebH+lHEdwXSJa2nvzCCpkKiRMClLt4WVcxHXuLBaouf9H51j3xAivWqd5dlMI7uVryAzajo4XL8h2n4sSPgGqVgJ3SHHfcB2w3GuRB9rqgwBZLt6gfDNkP/18xhxTV7/L/avjM3N4FDEXuIn5U4H4GWgte6bQV/IQ9uRKrDXegwzbevl576WZtazhjFcuHsIVisJjcd1MvL5ZMy9kKrjVnrp7pMhdaL4HUQ8Y5hr7F3Zh6f5tpLGUFvdtWZjbIR7go1tUTUmVxwOs6WDgRNHG2vLOVQmJ8tnPrzfHnJCSmWanb2+Q6YsZOdZLB5PeStccRus4Zcjqa02hlBl20eiyvgOxHV/swJfrc64ZVPUti2nbCt9Z0i1mEvbTj8WF8Xlp5KDpt39AkObz7y9C+iZsco2z0ICL3mTL1vu0XBmY9kfITvw3SM8sD0jHR6L7PE3Xpdk/g==
+---
+#### Écouter les événements <Reference to="guide/essentials/event-handling.html" />
+
+La valeur passée peut être le corps d'une fonction ou directement une fonction.
+
+Il est préférable d'utiliser la fonction pour avoir accès à l'évènement plus simplement et éviter l'usage du `$event` pouvant être mal typé.
+
+On peut appeler une fonction du composant, ou directement effectuer des petits changements d'état. Les variables dynamiques sont modifiables, mais à éviter pour des données critiques, il est préférable de laisser les fonctions s'en charger.
+
+> L'écoute d'évènements ne se limite pas aux évènements natifs, mais également à ceux émis par les composants Vue.
+---
+layout: iframe-right
+url: https://sfc.vuejs.org/#eNp9U81u2zAMfhXOGOAWqO2t6y5eumXrrjtt2EkXxWIcrbIkSHTaIsgD7Tn2YqNlJ3XaokB+RH4kP4r6uMu+el9ue8zqbBGboD19FlZ33gWCG9d5WAfXQV5WgzEE5sLifYIVrmVvCHbCAjQMO4uWYj06IKUPp/3F8KskybPzAxaQ+mBhN5yFFTT8KySpzc+Nu7M1rKWJOMbuH4t0SBunHimc/Z6Sfrm2NXgWSRIeOQBoo2M5KwvX8CbFzAsLy59Fdbw8G4SdNxzGFsBirdGoiAM2ZC3SWJaUKEf6a5GddiIyqGVDeosMzRpgf3Uoo/QWtoVeP42YcIDfTjcaDEZQ//4OAXHKrDh1bK2a9baoZm2zGenBjDdY9USOhz2mKx056qGGlXHN7afBKWjlgsJQw6W/h+iMVtAGfEgg5yewCFLpnmd/5e8TkMY3fA9NPGNYGxxDOYaPhdIBeSqO37dxpu/sBLbSP5YFkEa3ttB8HWZLifxogSa0k6HVtiDHOe/fHZO8VErbduYbnzVNIbvIRk0XnfTln+gs6z11KyYgiuyoKpGxzgdbZBsiH+uq6q2/bUsWebVkrAq9Jd1hoVy3/FBellcf+U0izf0lxq5YBXcXMTCjyJKAp+IVO7fDSNHyZDG8SvYk9oTwCfaM9KBwHsBhgU82/aVV9sFxG4dhjDKu4ZtzBiUL64WVOVkYQYtJcMvG6OaW9f0WO01n+Xxl8oup8vlR8bvd5IIvkN/IZoMhhxryH84S3y2H/f7ZNiyqketU/9n+P2rzovY=
+---
+#### Émettre des événements <Reference to="guide/components/events.html" />
+
+Un composant peut transmettre des informations à son parent via l'émission d'évènements.
+Depuis le template, l'usage de `$emit` permet de le faire en fournissant en paramètres :
+- le nom de l'évènement
+- les éventuelles données à transmettre
+
 ---
 title: Options API ou Composition API ?
 level: 2
