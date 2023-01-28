@@ -21,7 +21,6 @@ a.reference {
 
     &:hover {
         @apply: !text-vue inline-block;
-        transform: translateX(2px);
     }
 
     a & {
