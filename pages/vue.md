@@ -615,7 +615,7 @@ hideInToc: true
 ---
 # Options API <small>ou</small> Composition API ?
 
-Vue s'est fait connaître pour sa simplicité et sa facile prise en main. Ceci est surtout du à son API utilisant des options sous forme d'objet.
+Vue s'est fait connaître pour sa simplicité et sa facile prise en main. Ceci est surtout du à son API utilisant des options sous la forme d'un objet.
 
 <style>
 .shiki-container {
@@ -663,7 +663,7 @@ export default {
 
 export default {
   setup() {
-    const props = defineProps<{ userId: number }>();
+    const props = defineProps({ userId: Number });
 
     const activeUser = ref(null);
 
@@ -679,7 +679,12 @@ export default {
   }
 }
 ```
-Il y près de 3 ans est sortie la Composition API, nouveau paradigme, nouvelle vision, en plus de l'Options API
+
+Il y près de 3 ans est sortie la nouvelle <strong underline>Composition API</strong> :  
+nouveau paradigme,  
+nouvelle vision,  
+très proche des <Reference to="guide/extras/composition-api-faq.html#comparison-with-react-hooks">hooks de React</Reference>,  
+reprenant toutes les fonctionnalités de l'Option API. 
 
 </div>
 </v-click>
@@ -699,7 +704,7 @@ layout: two-cols
 
 ### Composition API
 - Du javascript sans notion de contexte
-- Organisation par fonctionnalité
+- Organisation plus flexible
 - Permet un découplage plus précis
 
 ::right::
@@ -712,22 +717,22 @@ layout: two-cols
 <br>
 
 ### Composition API
-- Complexité plus forte et un certain niveau de JS à avoir
+- Complexité plus forte et un certain niveau de JavaScript à avoir
 - Les notions de ref compliqué à comprendre
 
 ---
 ---
-## À la découverte de la <strong text-vue>Composition API</strong>
+## À la découverte de la <strong text-vue>Composition API</strong> <Reference to="guide/extras/composition-api-faq" />
 
-On va partir du principe que l'Options API (OAPI) est acquise. Nous partons donc à la découverte de la Composition API (CAPI).
+On part du principe que l'Options API (OAPI) est acquise et on va donc à la découverte de la Composition API (CAPI).
 
-Elle propose une évolution nette qui peut sembler déroutant de premier abord et elle offre une multitude de possibilité pour manipuler les données et les éléments de manière toujours aussi réactive.
+Elle propose une évolution nette qui peut sembler déroutante de premier abord en offrant une multitude de possibilités pour manipuler les données et les éléments de manière réactive.
 
 > Pour information, la CAPI est accessible à la fois pour la version 2 (à partir de la version 2.7) et la version 3 de Vue.
 
 <v-click>
 
-<span text-xl>C'est parti !</span>  
+<span text-xl>C'est parti ! <SimpleIconsStarship animate-pulse /></span>  
 Tout commence avec la nouvelle méthode `setup` qui permet d'enregistrer en une *seule exécution* tout les principes de réactivité **d'un composant**.
 
 </v-click>
@@ -782,20 +787,21 @@ setup() {
 ## Transmettre les données à la vue
 
 Via la fonction `setup()` au sein du composant, toutes les données (réactives ou non) retournées par la fonction sera accessible au template.
-<div :hidden="$slidev.nav.clicks === 0">
 
-Ou, avec l'option `setup` sur `<script>`, les variables accessibles dans le block le seront dans le template
+<v-click at="2" fade>
 
-</div>
+Ou, avec l'option `setup` sur `<script>`, les variables accessibles dans le block le seront dans le template. On s'attardera plus tard dessus.
+
+</v-click>
 
 <style>
 .shiki-container {
-  --slidev-code-font-size: 8px;
-  --slidev-code-line-height: 10px;
+  --slidev-code-font-size: 10px;
+  --slidev-code-line-height: 12px;
 }
 </style>
 
-```vue {1-13,21-23|14-18,20-22}
+```vue {1-13,21-23|14-19,20-23}
 <script>
   import VERSION from 'constant.js';
   import { ref } from 'vue'
@@ -812,7 +818,7 @@ Ou, avec l'option `setup` sur `<script>`, les variables accessibles dans le bloc
 
 <script setup>
   import { ref } from 'vue'
-  import { VERSION: version } from 'constant.js';
+  import { VERSION as version } from 'constant.js';
   const user = ref('');
 </script>
 
@@ -866,10 +872,8 @@ export const useActiveUser = () => {
 }
 ```
 
-
 ---
 layout: two-cols
-split: 2/3
 ---
 ## Les cycles de vie
 
@@ -881,8 +885,12 @@ Pour effectuer des actions pendant le cycle de vie du composant ou d'un composab
 - `onErrorCaptured`: exécuté lorsque le composant ou un enfant a émit une erreur <Reference to="api/composition-api-lifecycle.html#onerrorcaptured" />
 
 :: right ::
+
+<v-click fade>
+
 ```ts
 import { ref, onMounted, onUnmounted } from 'vue'
+
 export const useActiveUser = () => {
   const user = ref(null);
 
@@ -903,20 +911,45 @@ export const useActiveUser = () => {
   };
 }
 ```
+</v-click>
+
+---
+layout: iframe-right
+url: https://sfc.vuejs.org/#eNp9kU1vwjAMhv+KlQtFgmTSduoK0o4c9g9y6YKBouZDTsoOVf/7nH4gxqSdEtuvn9hvevERgrx1KEpRRUNNSBAxdWGvXWODpwQ9EJ424N2n71zCIwxwIm9hxV0r7bQz3sUE1ruDC12CXdYXrmvb9ftj0dZnfCoCaHfnFsUadnvoc3qByVvddihDWxu8+PaIxAQtDqYBs8IJDE1WarH05Xfmvkhm1F9SCqVS+ZCmTurt5TXrh3Uev1LT3rwxBwktv5aQI4BqROeRd1osM2kx1+wZyqlU8DEO/3vPUVmpO1JsxOTp1tZBXqN37Pq4r54LUYtyciDn2OAcT/NHXiCeTP6ra5Sezopvkti6xqLEaLdf5L8jEoO12DwwFCdvSFtCxwYi/cd8kv7hZuzAzonhB3nKxJQ=
+---
+## Manipuler le DOM avec les template refs <Reference to="guide/essentials/template-refs.html" />
+
+Avec l'usage de composants tiers ou autre, récupérer l'instance d'un élément DOM est nécessaire.
+
+Pour ce faire,  
+utiliser la même syntaxe qu'auparavant pour le template c'est-à-dire `ref="monInput"`  
+et créer la ref correspondante dans `setup` ainsi: `const monInput = ref(null)`.
+
+La valeur de la ref après que le composant soit monté est accessible pour y faire ce qu'on y souhaite.
+
+On peut récupérer la ref d'un composant Vue.
 
 ---
 ---
+## Injection de dépendances
 
-## Définir les props et les émits via des macros
-### Les Macros <Reference to="https://vue-macros.sxzz.moe" />
-- defineProps 
-- defineEmits
-
-
+Déjà accessible en version 2 (mais usage réservé pour les librairies), `provide` et `inject` permettent l'injection de dépendances pour faire passer des données réactives (ou non) à travers toute l'application.
 
 ---
 ---
-## Utiliser l'Options API avec la Composition API ?
+## Définir les props et les évènements émis <Reference to="api/composition-api-setup.html#accessing-props" />
+
+Pour la définitions des props et évènements, on peut utiliser les options `props` et `emits` traditionnels avec l'usage de l'option `setup()`.
+
+Avec `<script setup>`, c'est différent, et ça bouge grâce aux..
+
+### Macros <Reference to="https://vue-macros.sxzz.moe" />
+<br>
+
+> Fonctions globales disponibles sans import pour simplifier certaines configurations et permettre un meilleur support TypeScript
+
+- defineProps & defineEmits <Reference to="api/sfc-script-setup.html#defineprops-defineemits" />
+- defineExpose <Reference to="api/sfc-script-setup.html#defineexpose" />
 
 ---
 ---
