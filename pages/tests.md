@@ -10,4 +10,16 @@ layout: fact
 
 ---
 
+- principes
+- méthodologies
+- exemple
+
+---
+
 ## Tests d'intégrations et bout en bout
+
+---
+
+- exemple composant bout à bout avec back-end mocké
+
+---
