@@ -31,9 +31,6 @@ hideInToc: true
   }
 </style>
 
-<!--
-DSD
--->
 
 ---
 hideInToc: true
@@ -47,4 +44,4 @@ src: ./pages/vue.md
 ---
 <!-- ---
 src: ./pages/tests.md
---- -->
+---
