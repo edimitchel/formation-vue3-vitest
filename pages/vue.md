@@ -953,6 +953,15 @@ Avec `<script setup>`, c'est différent, et ça bouge grâce aux..
 
 ---
 ---
+# Encore plus loin!
+
+Il y a encore de nombreuse choses à explorer dont:
+- la liaison bidirectionnelle avec `v-model`
+- watchEffect et gestion d'effets de bord
+- Teleport et Suspense
+
+---
+---
 ## Outils à utiliser pour ne pas recréer la roue
 
 <Reference to="https://vueuse.org/">Vue Use</Reference> propose une multitude de fonctionnalités utiles au quotidien fonctionnant la plupart avec les deux versions de Vue.
