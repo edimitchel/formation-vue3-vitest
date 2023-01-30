@@ -25,6 +25,10 @@ hideInToc: true
   <div text-cap>Capgemini Engineering</div>
 </div>
 
+<div absolute top-15 left-15 uppercase text-2xl>
+  <Reference to="https://formation-vue.netlify.app/">formation-vue.netlify.app</Reference>
+</div>
+
 <style>
   h1 {
     --at-apply: vue-brand;
