@@ -956,7 +956,7 @@ Avec `<script setup>`, c'est différent, et ça bouge grâce aux..
 # Encore plus loin!
 
 Il y a encore de nombreuse choses à explorer dont:
-- la liaison bidirectionnelle avec `v-model`
+- la gestion des formulaires et la liaison bidirectionnelle avec `v-model`
 - watchEffect et gestion d'effets de bord
 - Teleport et Suspense
 
