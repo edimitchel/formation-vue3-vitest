@@ -673,7 +673,7 @@ export default {
     watchEffect(() => {
       if (props.userId)
         fetchActiveUser()
-    }, { immedicate: true });
+    });
     
     return { activeUser }
   }
@@ -694,7 +694,7 @@ reprenant toutes les fonctionnalités de l'Option API.
 layout: two-cols
 ---
 
-## Les forces <span hidden>et faiblesse</span>
+### Les forces
 
 ### Options API
 - Simple d'utilisation
@@ -709,7 +709,7 @@ layout: two-cols
 
 ::right::
 
-## Les faiblesses
+### Les faiblesses
 ### Options API
 - Support TypeScript limité
 - Découpage limité (via mixins)
@@ -722,7 +722,7 @@ layout: two-cols
 
 ---
 ---
-## À la découverte de la <strong text-vue>Composition API</strong> <Reference to="guide/extras/composition-api-faq" />
+### À la découverte de la <strong text-vue>Composition API</strong> <Reference to="guide/extras/composition-api-faq" />
 
 On part du principe que l'Options API (OAPI) est acquise et on va donc à la découverte de la Composition API (CAPI).
 
@@ -736,10 +736,11 @@ Elle propose une évolution nette qui peut sembler déroutante de premier abord 
 Tout commence avec la nouvelle méthode `setup` qui permet d'enregistrer en une *seule exécution* tout les principes de réactivité **d'un composant**.
 
 </v-click>
+
 ---
 ---
 
-## Déclarer des variables réactives
+### Déclarer des variables réactives
 
 > Pour rappel, une variable réactive est par convention une variable que l'on modifie directement, et qui suite au changement, peut entraîner des effets de bord. La réactivité utilise la fonctionnalité Proxy de JavaScript.
 
@@ -784,7 +785,7 @@ setup() {
 
 ---
 ---
-## Transmettre les données à la vue
+### Transmettre les données à la vue
 
 Via la fonction `setup()` au sein du composant, toutes les données (réactives ou non) retournées par la fonction sera accessible au template.
 
@@ -830,7 +831,7 @@ Ou, avec l'option `setup` sur `<script>`, les variables accessibles dans le bloc
 layout: iframe-right
 url: https://sfc.vuejs.org/#eNp9kL1uhTAMhV/FzQJIENQVAVLVpUvHqksWCuZersiPnEAHxLvXufS/Urec4+Mvtjdx55xcFxSVqH1PkwvgMSyuVWbSzlKADQjHHHqr3RJwgB1GshoSbkqUUaa3xgfQ/gRNTKbJA86zhWdL83CTZF+RxTmkvvP4eM1+ANM0g6aNALl284Iy2KeYvOdkmnF/XR6D8UgsAmo3dwFZAdSTYQashbYDzo0STFHiKJ1v2237+em+1yXbEfmJEbk4Fi105+TFW8On2CJBvRe8EhVcnejx2lErcQ7B+aos/djHA168tHQq+SVpMWHSKNHr4oXsq0disBL5N0bJ5opUEJoBCek/5q/oH27E7srsYn8DEE2hWA==
 ---
-## Les données dérivées
+### Les données dérivées
 
 Dériver une donnée se fait comme avant, via `computed`.
 
@@ -849,7 +850,7 @@ Dès lors qu'une ref change dans la fonction, elle sera recalculée automatiquem
 
 ---
 ---
-## Les composables
+### Les composables
 
 Pour extraire de la logique et pouvoir la réutiliser, il suffit de créer un function, avec ou sans paramètre. Celle-ci peut retourner au besoin des données réactives.
 
@@ -875,7 +876,7 @@ export const useActiveUser = () => {
 ---
 layout: two-cols
 ---
-## Les cycles de vie
+### Les cycles de vie
 
 Pour effectuer des actions pendant le cycle de vie du composant ou d'un composable, voici quelques hooks disponibles :
 
@@ -917,7 +918,7 @@ export const useActiveUser = () => {
 layout: iframe-right
 url: https://sfc.vuejs.org/#eNp9kU1vwjAMhv+KlQtFgmTSduoK0o4c9g9y6YKBouZDTsoOVf/7nH4gxqSdEtuvn9hvevERgrx1KEpRRUNNSBAxdWGvXWODpwQ9EJ424N2n71zCIwxwIm9hxV0r7bQz3sUE1ruDC12CXdYXrmvb9ftj0dZnfCoCaHfnFsUadnvoc3qByVvddihDWxu8+PaIxAQtDqYBs8IJDE1WarH05Xfmvkhm1F9SCqVS+ZCmTurt5TXrh3Uev1LT3rwxBwktv5aQI4BqROeRd1osM2kx1+wZyqlU8DEO/3vPUVmpO1JsxOTp1tZBXqN37Pq4r54LUYtyciDn2OAcT/NHXiCeTP6ra5Sezopvkti6xqLEaLdf5L8jEoO12DwwFCdvSFtCxwYi/cd8kv7hZuzAzonhB3nKxJQ=
 ---
-## Manipuler le DOM avec les template refs <Reference to="guide/essentials/template-refs.html" />
+### Manipuler le DOM avec les template refs <Reference to="guide/essentials/template-refs.html" />
 
 Avec l'usage de composants tiers ou autre, récupérer l'instance d'un élément DOM est nécessaire.
 
@@ -931,13 +932,13 @@ On peut récupérer la ref d'un composant Vue.
 
 ---
 ---
-## Injection de dépendances
+### Injection de dépendances
 
 Déjà accessible en version 2 (mais usage réservé pour les librairies), `provide` et `inject` permettent l'injection de dépendances pour faire passer des données réactives (ou non) à travers toute l'application.
 
 ---
 ---
-## Définir les props et les évènements émis <Reference to="api/composition-api-setup.html#accessing-props" />
+### Définir les props et les évènements émis <Reference to="api/composition-api-setup.html#accessing-props" />
 
 Pour la définitions des props et évènements, on peut utiliser les options `props` et `emits` traditionnels avec l'usage de l'option `setup()`.
 
@@ -953,16 +954,17 @@ Avec `<script setup>`, c'est différent, et ça bouge grâce aux..
 
 ---
 ---
-# Encore plus loin!
+###  Encore plus loin!
 
-Il y a encore de nombreuse choses à explorer dont:
+Il y a encore de nombreuses choses à explorer dont:
 - la gestion des formulaires et la liaison bidirectionnelle avec `v-model`
 - watchEffect et gestion d'effets de bord
+- les slots
 - Teleport et Suspense
 
 ---
 ---
-## Outils à utiliser pour ne pas recréer la roue
+### Outils à utiliser pour ne pas recréer la roue
 
 <Reference to="https://vueuse.org/">Vue Use</Reference> propose une multitude de fonctionnalités utiles au quotidien fonctionnant la plupart avec les deux versions de Vue.
 
@@ -970,7 +972,7 @@ Il y a encore de nombreuse choses à explorer dont:
 ---
 ---
 
-## Bonnes pratiques <Reference to="style-guide" />
+### Bonnes pratiques <Reference to="style-guide" />
 
 Vue suggère une multitude de bonnes pratiques à suivre pour éviter les pièges au fur et à mesure du développement d'applications. En voici quelques unes :
 
@@ -999,7 +1001,8 @@ Vue suggère une multitude de bonnes pratiques à suivre pour éviter les piège
 </v-clicks>
 ---
 ---
-## Bonnes pratiques <Reference to="style-guide" />
+
+### Bonnes pratiques <Reference to="style-guide" />
 
 <v-clicks fade at="0">
 <div>
@@ -1025,6 +1028,7 @@ D'autres règles à suivre sur la page <Reference to="style-guide">des bonnes pr
 layout: image-right
 image: /vue-tutoriel.png
 ---
+
 ## Mise en pratique
 
 Après la théorie, passons à la pratique.
