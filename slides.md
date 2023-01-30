@@ -21,7 +21,7 @@ hideInToc: true
 <span uppercase font-mono>de la théorie à l'application bien finie</span>
 
 <div absolute bottom-6 right-15 text-right >
-  Michel EDIGHOFFER, 7-8 décembre 2022
+  Michel EDIGHOFFER, 30-31 janvier 2023
   <div text-cap>Capgemini Engineering</div>
 </div>
 
