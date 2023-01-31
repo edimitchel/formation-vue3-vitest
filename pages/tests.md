@@ -107,27 +107,29 @@ Il est néanmoins nécessaire d'ajouter une librarie pour pouvoir monter virtuel
 import Hello from '../components/Hello.vue'
 
 describe('mount component', async () => {
+ 
+    it('should be truthy', () => {
+        expect(Hello).toBeTruthy()
+    })
 
-  it('should ')
-    
-  expect(Hello).toBeTruthy()
+    it('should increment on click and calculate accordingly', () => {
 
-  const wrapper = mount(Hello, {
-    props: {
-      count: 4,
-    },
-  })
+    const wrapper = mount(Hello, {
+        props: {
+        count: 4,
+        },
+    });
 
-  expect(wrapper.text()).toContain('4 x 2 = 8')
-  expect(wrapper.html()).toMatchSnapshot()
+    expect(wrapper.text()).toContain('4 x 2 = 8')
 
-  await wrapper.get('button').trigger('click')
+    await wrapper.get('button').trigger('click')
 
-  expect(wrapper.text()).toContain('4 x 3 = 12')
+    expect(wrapper.text()).toContain('4 x 3 = 12')
 
-  await wrapper.get('button').trigger('click')
+    await wrapper.get('button').trigger('click')
 
-  expect(wrapper.text()).toContain('4 x 4 = 16')
+    expect(wrapper.text()).toContain('4 x 4 = 16')
+    })
 })
 ```
 ---
