@@ -55,6 +55,7 @@
 
   p {
     --at-apply: my-4 leading-6;
+    line-height: 1.5em;
   }
 
   h1+p {
@@ -80,6 +81,10 @@
     --at-apply: ml-1.1em pl-0.2em leading-1.8em;
   }
 
+  ol li {
+    --at-apply: ml-0 pl-0;
+  }
+  
   blockquote {
     --at-apply: text-sm px-2 py-2 pl-4 bg-$prism-background border-$slidev-theme-primary border-1 rounded opacity-80;
   }

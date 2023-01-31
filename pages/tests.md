@@ -4,10 +4,12 @@ layout: fact
 # Guider ses développements sous contrôle
 
 ## avec Vitest & Cypress
+
 ---
 
 ## Développements guidés par les tests unitaires
 
+<Toc text-2xl mt-10 mode="filterOnlyCurrentTree" minDepth="3" />
 ---
 layout: statement
 ---
@@ -36,10 +38,10 @@ image: /rouge-vert-refactor.png
 Avant toute chose,  
 **bien comprendre la fonctionnalité cible à atteindre, elle doit être bien spécifiée**.
 
-Identifier les petites étapes pour y parvenir et commencer par la première
+Identifier les petites étapes pour y parvenir et commencer par la première :
 
-- Ecrire un test qui couvre les attentes de la première étape
-- Développer la fonctionnalité de manière la plus rapide (même si le code est sale) jusqu'à que le test passe au vert
+- Ecrire un test qui couvre les attentes de l'étape
+- Développer la fonctionnalité le plus rapidement jusqu'à que le test passe au vert
 - Nettoyer le code de manière à le rendre conforme au projet tout en assurant que les tests restent au vert
 - Passer à l'étape suivante
 ---

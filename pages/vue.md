@@ -82,16 +82,10 @@ image: /vue-hero.png
 
 #### pour te rendre productif et efficace
 
-
-<div
+<Toc 
   v-motion
   v-motion-slide-visible-bottom
-  class="mt-4 -ml-6"
->
-
-<Toc mode="filterOnlyCurrentTree" minDepth="3" maxDepth="3" />
-
-</div>
+  class="mt-4" mode="filterOnlyCurrentTree" minDepth="3" maxDepth="3" />
 
 
 <!-- 
@@ -531,7 +525,7 @@ Lors de la compilation, Vue va travailler en amont pour différentier les élém
 ---
 ### Évènements et interactions
 
-<Toc mode="filterOnlyCurrentTree" minDepth="4" />
+<Toc text-2xl mt-10 mode="filterOnlyCurrentTree" minDepth="4" />
 
 ---
 ---
