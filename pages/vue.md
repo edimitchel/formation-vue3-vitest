@@ -1059,3 +1059,14 @@ Utiliser la source de données [formation-vue.free.beeceptor.com](https://format
 > Détails d'un utilisateur: `/users/<id>`
 
 <!-- https://beeceptor.com/console/formation-vue -->
+
+---
+hideInToc: true
+---
+
+## Mise en pratique (suite de la suite)
+
+- Ajouter une croix pour fermer les détails
+- Exporter les logiques dans les composants en dehors (vers des composables)
+- Utiliser les types TypeScript
+- Tester les composants
