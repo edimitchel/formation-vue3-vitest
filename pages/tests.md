@@ -1,13 +1,26 @@
 ---
 layout: fact
 ---
-# Guider ses développements sous contrôle
+# Guider ses développements et les mettre sous contrôle
 
 ## avec Vitest & Cypress
 
+<div
+  font-mono
+  v-motion
+  :duration="400"
+  :initial="{ y: 100, opacity: 0 }"
+  :enter="{ y: 0, opacity: 1 }">
+
+## PARTIE 2
+
+</div>
+
+---
+hideInToc: true
 ---
 
-## Développements guidés par les tests unitaires
+## Guider ses développements et les mettre sous contrôle
 
 <Toc text-2xl mt-10 mode="filterOnlyCurrentTree" minDepth="3" />
 ---

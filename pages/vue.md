@@ -5,11 +5,13 @@ preload: false
 # Développer avec <span vue-brand>Vue</span>
 
 <div
+  font-mono
   v-motion
-  :initial="{ y: 80 }"
-  :enter="{ y: 0 }">
+  :duration="400"
+  :initial="{ y: 100, opacity: 0 }"
+  :enter="{ y: 0, opacity: 1 }">
 
-## JOUR 1
+## PARTIE 1
 
 </div>
 
@@ -674,7 +676,7 @@ export default {
 }
 ```
 
-Il y près de 3 ans est sortie la nouvelle <strong underline>Composition API</strong> :  
+Il y a près de 3 ans est sortie la nouvelle <strong underline>Composition API</strong> :  
 nouveau paradigme,  
 nouvelle vision,  
 très proche des <Reference to="guide/extras/composition-api-faq.html#comparison-with-react-hooks">hooks de React</Reference>,  
@@ -739,7 +741,7 @@ Tout commence avec la nouvelle méthode `setup` qui permet d'enregistrer en une 
 > Pour rappel, une variable réactive est par convention une variable que l'on modifie directement, et qui suite au changement, peut entraîner des effets de bord. La réactivité utilise la fonctionnalité Proxy de JavaScript.
 
 <div flex gap-4>
-<v-click>
+<v-clicks fade>
 <div>
 
 Pour identifier une variable réactive, il existe la première solution pour toute variables dites primitives (string, number, boolean) et tableaux.
@@ -753,8 +755,6 @@ setup() {
 }
 ```
 </div>
-</v-click>
-<v-click>
 <div>
 
 La seconde solution sera moins courante mais intéressante pour regrouper plusieurs ref, à utiliser pour des objets.
@@ -768,13 +768,15 @@ setup() {
 }
 ```
 </div>
-</v-click>
+</v-clicks>
 </div>
 
 <v-click>
+<div  class="-mt-4">
 
 `ref` est à privilégier pour la plupart des cas d'usage.  `reactive` est à voir comme un objet const qui ne peut être réassigné mais ses membres si. `reactive` a un intérêt fort pour passer un ensemble de `ref` entre fonctions. **Ces règles sont imposées pour préserver la réactivité**
 
+</div>
 </v-click>
 
 ---
@@ -926,9 +928,25 @@ On peut récupérer la ref d'un composant Vue.
 
 ---
 ---
-### Injection de dépendances
+### Injection de dépendances <Reference to="guide/components/provide-inject.html" />
 
-Déjà accessible en version 2 (mais usage réservé pour les librairies), `provide` et `inject` permettent l'injection de dépendances pour faire passer des données réactives (ou non) à travers toute l'application.
+Déjà accessible en version 2 (mais usage réservé pour les librairies),  
+`provide` et `inject` permettent l'injection de dépendances pour faire passer des données réactives (ou non) à travers toute l'application.
+
+<div flex gap-4>
+<figure>
+
+![](/prop-drilling.png)
+
+<caption w-full font-mono>Props drilling</caption>
+</figure>
+<figure>
+
+![](/provide-inject.png)
+
+<caption w-full font-mono>Provide / Inject</caption>
+</figure>
+</div>
 
 ---
 ---
