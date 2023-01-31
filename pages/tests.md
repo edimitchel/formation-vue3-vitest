@@ -94,7 +94,7 @@ Via le plugin Vue de Vite, Vitest par défaut peut interpréter vos composants. 
 
 Il est néanmoins nécessaire d'ajouter une librarie pour pouvoir monter virtuellement vos composants et pourvoir y faire des assertions: `@vue/test-utils`
 
-<Reference to="https://github.com/vitest-dev/vitest/blob/main/examples/vue/test/basic.test.ts" absolute>EXEMPLE</Reference>
+<Reference to="https://stackblitz.com/fork/github/vitest-dev/vitest/tree/main/examples/vue?initialPath=__vitest__" absolute>EXEMPLE LIVE</Reference>
 
 <style>
 .shiki-container {
@@ -131,6 +131,16 @@ describe('mount component', async () => {
 })
 ```
 ---
+layout: image-right
+image: /tdd.jpg
 ---
 ### Mise en pratique
 
+<p text-xl>
+
+Exporter la logique de récupération des données utilisateur dans un composable (existant ou un nouveau selon votre choix).
+
+
+</p>
+
+> Suivez la méthodologie de test pour être guidé par les tests.
