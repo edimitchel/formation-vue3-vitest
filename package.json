@@ -2,9 +2,9 @@
   "name": "formation-vue3-vitest-cypress",
   "private": true,
   "scripts": {
-    "build": "slidev build",
+    "build": "slidev build && npm run export",
     "dev": "slidev",
-    "export": "slidev export"
+    "export": "slidev export --with-clicks --output=public/slides-light.pdf && slidev export --dark --with-clicks --output=public/slides-dark.pdf"
   },
   "dependencies": {
     "@slidev/cli": "^0.39.0",

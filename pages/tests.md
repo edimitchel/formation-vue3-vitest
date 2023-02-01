@@ -4,7 +4,7 @@ preload: false
 ---
 # Guider ses développements et les mettre sous contrôle
 
-## avec Vitest & Cypress
+## avec Vitest
 
 <div
   font-mono
