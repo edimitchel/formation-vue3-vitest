@@ -1,3 +1,4 @@
-# Formation Vue.js
+# Formation Vue.js + Vitest
 
-Slides interactives disponible sur [formation-vue.netlify.app](https://formation-vue.netlify.app). Slides en PDF: [thême clair](./public/slides-light.pdf) / [thême foncé](./public/slides-dark.pdf).
+Présentation interactive disponible sur [formation-vue.netlify.app](https://formation-vue.netlify.app).  
+Slides en PDF: [thème clair](./public/slides-light.pdf) / [thème foncé](./public/slides-dark.pdf).
