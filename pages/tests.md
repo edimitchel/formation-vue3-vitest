@@ -1,5 +1,6 @@
 ---
 layout: fact
+preload: false
 ---
 # Guider ses développements et les mettre sous contrôle
 
@@ -20,9 +21,10 @@ layout: fact
 hideInToc: true
 ---
 
-## Guider ses développements et les mettre sous contrôle
+# Guider ses développements et les mettre sous contrôle
 
-<Toc text-2xl mt-10 mode="filterOnlyCurrentTree" minDepth="3" />
+<Toc mt-10 mode="onlyCurrentTree" minDepth="3" />
+
 ---
 layout: statement
 ---
@@ -57,6 +59,7 @@ Identifier les petites étapes pour y parvenir et commencer par la première :
 - Développer la fonctionnalité le plus rapidement jusqu'à que le test passe au vert
 - Nettoyer le code de manière à le rendre conforme au projet tout en assurant que les tests restent au vert
 - Passer à l'étape suivante
+
 ---
 layout: image-right
 image: https://vitest.dev/logo-shadow.svg
@@ -91,7 +94,6 @@ describe('transform raw data to specilized data', () => {
         expect(transformedData).toContain('foo');
         expect(transformedData).toContain('bar');
     })
-
 })
 ```
 
@@ -107,7 +109,7 @@ npx vitest
 
 Via le plugin Vue de Vite, Vitest par défaut peut interpréter vos composants. (<Reference to="https://github.com/vitest-dev/vitest/blob/main/examples/vue/vitest.config.ts">exemple de config avec Vue</Reference>)
 
-Il est néanmoins nécessaire d'ajouter une librarie pour pouvoir monter virtuellement vos composants et pourvoir y faire des assertions: `@vue/test-utils`
+Il est néanmoins nécessaire d'ajouter une librarie pour pouvoir monter virtuellement vos composants et pourvoir y faire des assertions : `@vue/test-utils`.
 
 <Reference to="https://stackblitz.com/fork/github/vitest-dev/vitest/tree/main/examples/vue?initialPath=__vitest__" absolute>EXEMPLE LIVE</Reference>
 
@@ -147,6 +149,7 @@ describe('mount component', async () => {
     })
 })
 ```
+
 ---
 layout: image-right
 image: /tdd.jpg
@@ -156,7 +159,6 @@ image: /tdd.jpg
 <p text-xl>
 
 Exporter la logique de récupération des données utilisateur dans un composable (existant ou un nouveau selon votre choix).
-
 
 </p>
 
